@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>GHOST STATS</h1>
+
+
+<div class="row">
+    <div class="column">
+
+    <p><h3>Evidence</h3>
+
+        <!-- FRZ -->
+        <input type="checkbox" id="frz" name="frz" value="lol" 
+        onclick="frzIf()">
+        <label for="frz">Freezing Air</label><br>
+
+        <!-- EMF -->
+        <input type="checkbox" id="emf" name="emf" value="EMF5"
+        onclick="emfIf()">
+        <label for="emf">EMF 5</label><br>
+
+        <!-- ORB -->
+        <input type="checkbox" id="orb" name="orb" value="Ghost Orbs"
+        onclick="orbIf()">
+        <label for="orb">Ghost Orbs</label><br>
+
+        <!-- BOX -->
+        <input type="checkbox" id="box" name="box" value="Spirit Box"
+        onclick="sprIf()">
+        <label for="box">Spirit Box</label><br>
+
+        <!-- BOOK -->
+        <input type="checkbox" id="book" name="book" value="Ghost Writing"
+        onclick="bookIf()">
+        <label for="book">Ghost Writing</label><br>
+
+        <!-- PRINT -->
+        <input type="checkbox" id="print" name="print" value="Fingerprints"
+        onclick="printIf()">
+        <label for="print">Fingerprints</label><br>
+
+    </p>
+
+    <p><h3>Other Characteristics</h3>
+
+        <!-- ANGER -->
+        <input type="checkbox" id="anger" name="anger" value="Aggressive">
+        <label for="anger">Aggressive</label><br>
+    
+        <!-- SHY -->
+        <input type="checkbox" id="shy" name="shy" value="Shyness">
+        <label for="shy">Shyness</label><br>
+    
+        <!-- NOISE -->
+        <input type="checkbox" id="noi" name="noi" value="Noisy">
+        <label for="noi">Noisy</label><br>
+    
+    </p>
+
+    </div>
+
+
+
+    <div class="column">
+        <h3>Possible Ghosts</h3>
+        <ul>
+            <li><label id="phantom">Phantom</label></li>
+            <li><label id="banshee">Banshee</label></li>
+            <li><label id="mare">Mare</label></li>
+            <li><label id="yurei">Yurei</label></li>
+            <li><label id="demon">Demon</label></li>
+            <li><label id="wraith">Wraith</label></li>
+            <li><label id="jinn">Jinn</label></li>
+            <li><label id="shade">Shade</label></li>
+            <li><label id="oni">Oni</label></li>
+            <li><label id="revenant">Revenant</label></li>
+            <li><label id="poltergeist">Poltergeist</label></li>
+            <li><label id="spirit">Spirit</label></li>
+        </ul>
+    </div>
+
+</div>
+
+
+</body>
+
+
+<script>
+
+var f = document.getElementById("frz");
+var e = document.getElementById("emf");
+var o = document.getElementById("orb");
+var s = document.getElementById("box");
+var b = document.getElementById("book");
+var p = document.getElementById("print");
+
+
+var ph = document.getElementById("phantom");
+var ba = document.getElementById("banshee");
+var ma = document.getElementById("mare");
+var yu = document.getElementById("yurei");
+var de = document.getElementById("demon");
+var wr = document.getElementById("wraith");
+var ji = document.getElementById("jinn");
+var sh = document.getElementById("shade");
+var on = document.getElementById("oni");
+var re = document.getElementById("revenant");
+var po = document.getElementById("poltergeist");
+var sp = document.getElementById("spirit");
+
+function frzIf() {
+
+    if (f.checked == true){
+
+        ji.style.color = "#cecece";
+        sh.style.color = "#cecece";
+        on.style.color = "#cecece";
+        re.style.color = "#cecece";
+        po.style.color = "#cecece";
+        sp.style.color = "#cecece";
+
+    } 
+    else {
+
+        ji.style.color = "black";
+        sh.style.color = "black";
+        on.style.color = "black";
+        re.style.color = "black";
+        po.style.color = "black";
+        sp.style.color = "black";
+    }
+
+    
+
+    
+
+
+}
+
+function emfIf() {
+
+    if (e.checked == true){
+
+        ma.style.color = "#cecece";
+        yu.style.color = "#cecece";
+        de.style.color = "#cecece";
+        wr.style.color = "#cecece";
+        po.style.color = "#cecece";
+        sp.style.color = "#cecece";
+
+    } 
+    else {
+
+        ma.style.color = "#000000";
+        yu.style.color = "#000000";
+        de.style.color = "#000000";
+        wr.style.color = "#000000";
+        po.style.color = "#000000";
+        sp.style.color = "#000000";
+
+    }
+}
+
+function orbIf() {
+
+    if (o.checked == true){
+
+        ba.style.color = "#cecece";
+        de.style.color = "#cecece";
+        wr.style.color = "#cecece";
+        on.style.color = "#cecece";
+        re.style.color = "#cecece";
+        sp.style.color = "#cecece";
+
+}
+    else {
+        ba.style.color = "#000000";
+        de.style.color = "#000000";
+        wr.style.color = "#000000";
+        on.style.color = "#000000";
+        re.style.color = "#000000";
+        sp.style.color = "#000000";
+    }
+}
+
+function sprIf() {
+
+    if (s.checked == true) {
+        
+        ba.style.color = "#cecece";
+        re.style.color = "#cecece";
+        ph.style.color = "#cecece";
+        yu.style.color = "#cecece";
+        sh.style.color = "#cecece";
+
+    }
+    else {
+        ba.style.color = "#000000";
+        re.style.color = "#000000";
+        ph.style.color = "#000000";
+        yu.style.color = "#000000";
+        sh.style.color = "#000000";
+    }
+}
+
+function bookIf() {
+
+    if (b.checked == true) {
+
+        ba.style.color = "#cecece";
+        ph.style.color = "#cecece";
+        wr.style.color = "#cecece";
+        ma.style.color = "#cecece";
+        ji.style.color = "#cecece";
+        po.style.color = "#cecece";
+        
+    }
+    else {
+
+        ba.style.color = "#000000";
+        ph.style.color = "#000000";
+        wr.style.color = "#000000";
+        ma.style.color = "#000000";
+        ji.style.color = "#000000";
+        po.style.color = "#000000";
+    }
+}
+
+function printIf() {
+
+    if (p.checked == true) {
+
+        ph.style.color = "#cecece";
+        ma.style.color = "#cecece";
+        ji.style.color = "#cecece";
+        yu.style.color = "#cecece";
+        sh.style.color = "#cecece";
+        de.style.color = "#cecece";
+        on.style.color = "#cecece";
+        
+    }
+    else {
+
+        ph.style.color = "#000000";
+        ma.style.color = "#000000";
+        ji.style.color = "#000000";
+        yu.style.color = "#000000";
+        sh.style.color = "#000000";
+        de.style.color = "#000000";
+        on.style.color = "#000000";
+    }
+}
+
+
+</script>
+
+
+</html>
