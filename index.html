@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phasmophobia Ghost Finder</title>
+    <title>Phasmophobia Ghost Classifier</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="icon" href="Phasmophobia-lg.png">
 </head>
 <body>
 
-<h1>Phasmophobia Ghost Finder v1.1</h1>
+<h1>Phasmophobia Ghost Classifier v1.2</h1>
 
 
 <div class="row">
@@ -17,51 +17,69 @@
 
     <p><h3>Evidence</h3>
 
-        <!-- FRZ -->
-        <input type="checkbox" id="frz" name="frz" value="lol" 
-        onclick="frzIf()">
-        <label for="frz">Freezing Air</label><br>
-
-        <!-- EMF -->
-        <input type="checkbox" id="emf" name="emf" value="EMF5"
-        onclick="emfIf()">
-        <label for="emf">EMF 5</label><br>
-
-        <!-- ORB -->
-        <input type="checkbox" id="orb" name="orb" value="Ghost Orbs"
-        onclick="orbIf()">
-        <label for="orb">Ghost Orbs</label><br>
-
-        <!-- BOX -->
-        <input type="checkbox" id="box" name="box" value="Spirit Box"
-        onclick="sprIf()">
-        <label for="box">Spirit Box</label><br>
-
-        <!-- BOOK -->
-        <input type="checkbox" id="book" name="book" value="Ghost Writing"
-        onclick="bookIf()">
-        <label for="book">Ghost Writing</label><br>
-
-        <!-- PRINT -->
-        <input type="checkbox" id="print" name="print" value="Fingerprints"
-        onclick="printIf()">
-        <label for="print">Fingerprints</label><br>
+        <table>
+            <tr>
+                <th><h4>✓</h4></th>
+                <th><h4>X</h4></th>
+                <th> </th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="frzT" onclick="check()"></th>
+                <th><input type="checkbox" id="frzF" onclick="check()"></th>
+                <th>Freezing Air</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="emfT" onclick="check()"></th>
+                <th><input type="checkbox" id="emfF" onclick="check()"></th>
+                <th>EMF 5</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="orbT" onclick="check()"></th>
+                <th><input type="checkbox" id="orbF" onclick="check()"></th>
+                <th>Ghost Orbs</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="boxT" onclick="check()"></th>
+                <th><input type="checkbox" id="boxF" onclick="check()"></th>
+                <th>Spirit Box</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="writeT" onclick="check()"></th>
+                <th><input type="checkbox" id="writeF" onclick="check()"></th>
+                <th>Ghost Writing</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="printT" onclick="check()"></th>
+                <th> <input type="checkbox" id="printF" onclick="check()"></th>
+                <th>Fingerprints</th>
+            </tr>
+        </table>
 
     </p>
 
     <p><h3>Other Characteristics</h3>
 
-        <!-- ANGER -->
-        <input type="checkbox" id="anger" name="anger" value="Aggressive">
-        <label for="anger">Aggressive</label><br>
 
-        <!-- SHY -->
-        <input type="checkbox" id="shy" name="shy" value="Shyness">
-        <label for="shy">Shyness</label><br>
 
-        <!-- NOISE -->
-        <input type="checkbox" id="noi" name="noi" value="Noisy">
-        <label for="noi">Noisy</label><br>
+        <table>
+            <tr>
+                <th><h4>✓</h4></th>
+                <th> </th>
+
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="anger"></th>
+                <th>Aggressive</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="shy" name="shy" value="Shyness"></th>
+                <th>Shyness</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="noi" name="noi" value="Noisy"></th>
+                <th>Noisy</th>
+            </tr>
+        </table>
 
     </p>
 
@@ -95,12 +113,19 @@
 
 <script>
 
-var f = document.getElementById("frz");
-var e = document.getElementById("emf");
-var o = document.getElementById("orb");
-var s = document.getElementById("box");
-var b = document.getElementById("book");
-var p = document.getElementById("print");
+var frzT = document.getElementById("frzT");
+var emfT = document.getElementById("emfT");
+var orbT = document.getElementById("orbT");
+var boxT = document.getElementById("boxT");
+var writeT = document.getElementById("writeT");
+var printT = document.getElementById("printT");
+
+var frzF = document.getElementById("frzF");
+var emfF = document.getElementById("emfF");
+var orbF = document.getElementById("orbF");
+var boxF = document.getElementById("boxF");
+var writeF = document.getElementById("writeF");
+var printF = document.getElementById("printF");
 
 
 var ph = document.getElementById("phantom");
@@ -116,9 +141,26 @@ var re = document.getElementById("revenant");
 var po = document.getElementById("poltergeist");
 var sp = document.getElementById("spirit");
 
-function frzIf() {
 
-    if (f.checked == true){
+function check() {
+
+    // reset
+    ph.style.color = "#000000";
+    ba.style.color = "#000000";
+    ma.style.color = "#000000";
+    yu.style.color = "#000000";
+    de.style.color = "#000000";
+    wr.style.color = "#000000";
+    ji.style.color = "#000000";
+    sh.style.color = "#000000";
+    on.style.color = "#000000";
+    re.style.color = "#000000";
+    po.style.color = "#000000";
+    sp.style.color = "#000000";
+
+
+
+    if (frzT.checked == true){
 
         ji.style.color = "#cecece";
         sh.style.color = "#cecece";
@@ -128,26 +170,8 @@ function frzIf() {
         sp.style.color = "#cecece";
 
     } 
-    else {
-
-        ji.style.color = "black";
-        sh.style.color = "black";
-        on.style.color = "black";
-        re.style.color = "black";
-        po.style.color = "black";
-        sp.style.color = "black";
-    }
-
-
-
-
-
-
-}
-
-function emfIf() {
-
-    if (e.checked == true){
+    
+    if (emfT.checked == true){
 
         ma.style.color = "#cecece";
         yu.style.color = "#cecece";
@@ -157,21 +181,8 @@ function emfIf() {
         sp.style.color = "#cecece";
 
     } 
-    else {
 
-        ma.style.color = "#000000";
-        yu.style.color = "#000000";
-        de.style.color = "#000000";
-        wr.style.color = "#000000";
-        po.style.color = "#000000";
-        sp.style.color = "#000000";
-
-    }
-}
-
-function orbIf() {
-
-    if (o.checked == true){
+    if (orbT.checked == true){
 
         ba.style.color = "#cecece";
         de.style.color = "#cecece";
@@ -180,20 +191,9 @@ function orbIf() {
         re.style.color = "#cecece";
         sp.style.color = "#cecece";
 
-}
-    else {
-        ba.style.color = "#000000";
-        de.style.color = "#000000";
-        wr.style.color = "#000000";
-        on.style.color = "#000000";
-        re.style.color = "#000000";
-        sp.style.color = "#000000";
     }
-}
 
-function sprIf() {
-
-    if (s.checked == true) {
+    if (boxT.checked == true) {
 
         ba.style.color = "#cecece";
         re.style.color = "#cecece";
@@ -202,18 +202,8 @@ function sprIf() {
         sh.style.color = "#cecece";
 
     }
-    else {
-        ba.style.color = "#000000";
-        re.style.color = "#000000";
-        ph.style.color = "#000000";
-        yu.style.color = "#000000";
-        sh.style.color = "#000000";
-    }
-}
 
-function bookIf() {
-
-    if (b.checked == true) {
+    if (writeT.checked == true) {
 
         ba.style.color = "#cecece";
         ph.style.color = "#cecece";
@@ -223,20 +213,8 @@ function bookIf() {
         po.style.color = "#cecece";
 
     }
-    else {
 
-        ba.style.color = "#000000";
-        ph.style.color = "#000000";
-        wr.style.color = "#000000";
-        ma.style.color = "#000000";
-        ji.style.color = "#000000";
-        po.style.color = "#000000";
-    }
-}
-
-function printIf() {
-
-    if (p.checked == true) {
+    if (printT.checked == true) {
 
         ph.style.color = "#cecece";
         ma.style.color = "#cecece";
@@ -247,17 +225,221 @@ function printIf() {
         on.style.color = "#cecece";
 
     }
-    else {
 
-        ph.style.color = "#000000";
-        ma.style.color = "#000000";
-        ji.style.color = "#000000";
-        yu.style.color = "#000000";
-        sh.style.color = "#000000";
-        de.style.color = "#000000";
-        on.style.color = "#000000";
+
+    if (frzF.checked == true){
+
+        de.style.color = "#cecece";
+        ma.style.color = "#cecece";
+        wr.style.color = "#cecece";
+        ba.style.color = "#cecece";
+        ph.style.color = "#cecece";
+        yu.style.color = "#cecece";
+
+    } 
+
+    if (emfF.checked == true){
+
+        ba.style.color = "#cecece";
+        ph.style.color = "#cecece";
+        ji.style.color = "#cecece";
+        on.style.color = "#cecece";
+        re.style.color = "#cecece";
+        sh.style.color = "#cecece";
+
+    } 
+
+    if (orbF.checked == true){ 
+
+        ph.style.color = "#cecece";
+        ji.style.color = "#cecece";
+        sh.style.color = "#cecece";
+        ma.style.color = "#cecece";
+        yu.style.color = "#cecece";
+        po.style.color = "#cecece";
+
     }
+
+    if (boxF.checked == true) {
+
+        ji.style.color = "#cecece";
+        ma.style.color = "#cecece";
+        po.style.color = "#cecece";
+        on.style.color = "#cecece";
+        de.style.color = "#cecece";
+        wr.style.color = "#cecece";
+        sp.style.color = "#cecece";
+
+    }
+
+    if (writeF.checked == true) {
+
+        on.style.color = "#cecece";
+        de.style.color = "#cecece";
+        sp.style.color = "#cecece";
+        sh.style.color = "#cecece";
+        yu.style.color = "#cecece";
+        re.style.color = "#cecece";
+
+    }
+
+    if (printF.checked == true) {
+
+        sp.style.color = "#cecece";
+        re.style.color = "#cecece";
+        po.style.color = "#cecece";
+        wr.style.color = "#cecece";
+        ba.style.color = "#cecece";
+
+    }
+
+
+
 }
+
+
+// function frzIf() {
+
+//     if (f.checked == true){
+
+//         ji.style.color = "#cecece";
+//         sh.style.color = "#cecece";
+//         on.style.color = "#cecece";
+//         re.style.color = "#cecece";
+//         po.style.color = "#cecece";
+//         sp.style.color = "#cecece";
+
+//     } 
+//     else {
+
+//         ji.style.color = "black";
+//         sh.style.color = "black";
+//         on.style.color = "black";
+//         re.style.color = "black";
+//         po.style.color = "black";
+//         sp.style.color = "black";
+//     }
+
+
+
+
+
+
+// }
+
+// function emfIf() {
+
+//     if (e.checked == true){
+
+//         ma.style.color = "#cecece";
+//         yu.style.color = "#cecece";
+//         de.style.color = "#cecece";
+//         wr.style.color = "#cecece";
+//         po.style.color = "#cecece";
+//         sp.style.color = "#cecece";
+
+//     } 
+//     else {
+
+//         ma.style.color = "#000000";
+//         yu.style.color = "#000000";
+//         de.style.color = "#000000";
+//         wr.style.color = "#000000";
+//         po.style.color = "#000000";
+//         sp.style.color = "#000000";
+
+//     }
+// }
+
+// function orbIf() {
+
+//     if (o.checked == true){
+
+//         ba.style.color = "#cecece";
+//         de.style.color = "#cecece";
+//         wr.style.color = "#cecece";
+//         on.style.color = "#cecece";
+//         re.style.color = "#cecece";
+//         sp.style.color = "#cecece";
+
+// }
+//     else {
+//         ba.style.color = "#000000";
+//         de.style.color = "#000000";
+//         wr.style.color = "#000000";
+//         on.style.color = "#000000";
+//         re.style.color = "#000000";
+//         sp.style.color = "#000000";
+//     }
+// }
+
+// function sprIf() {
+
+//     if (s.checked == true) {
+
+//         ba.style.color = "#cecece";
+//         re.style.color = "#cecece";
+//         ph.style.color = "#cecece";
+//         yu.style.color = "#cecece";
+//         sh.style.color = "#cecece";
+
+//     }
+//     else {
+//         ba.style.color = "#000000";
+//         re.style.color = "#000000";
+//         ph.style.color = "#000000";
+//         yu.style.color = "#000000";
+//         sh.style.color = "#000000";
+//     }
+// }
+
+// function bookIf() {
+
+//     if (b.checked == true) {
+
+//         ba.style.color = "#cecece";
+//         ph.style.color = "#cecece";
+//         wr.style.color = "#cecece";
+//         ma.style.color = "#cecece";
+//         ji.style.color = "#cecece";
+//         po.style.color = "#cecece";
+
+//     }
+//     else {
+
+//         ba.style.color = "#000000";
+//         ph.style.color = "#000000";
+//         wr.style.color = "#000000";
+//         ma.style.color = "#000000";
+//         ji.style.color = "#000000";
+//         po.style.color = "#000000";
+//     }
+// }
+
+// function printIf() {
+
+//     if (p.checked == true) {
+
+//         ph.style.color = "#cecece";
+//         ma.style.color = "#cecece";
+//         ji.style.color = "#cecece";
+//         yu.style.color = "#cecece";
+//         sh.style.color = "#cecece";
+//         de.style.color = "#cecece";
+//         on.style.color = "#cecece";
+
+//     }
+//     else {
+
+//         ph.style.color = "#000000";
+//         ma.style.color = "#000000";
+//         ji.style.color = "#000000";
+//         yu.style.color = "#000000";
+//         sh.style.color = "#000000";
+//         de.style.color = "#000000";
+//         on.style.color = "#000000";
+//     }
+// }
 
 
 </script>
