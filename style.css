@@ -17,11 +17,10 @@ ul{
 /* Create two equal columns that floats next to each other */
 .column {
     float: left;
-    width: 50%;
+    width: 20%;
     padding: 10px;
 }
 
-  
 /* Clear floats after the columns */
 .row:after {
     content: "";
@@ -34,4 +33,17 @@ ul{
     .column {
       width: 100%;
     }
+
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: left;
+    font-weight: normal;
+    padding: 3px
+  }
+
+table h4 {
+    text-align: center;
+    margin: 0px;
 }
