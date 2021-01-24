@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1>Phasmophobia Ghost Classifier v1.2</h1>
+<h1>Phasmophobia Ghost Classifier v1.3</h1>
 
 
 <div class="row">
@@ -26,7 +26,7 @@
             <tr>
                 <th><input type="checkbox" id="frzT" onclick="check()"></th>
                 <th><input type="checkbox" id="frzF" onclick="check()"></th>
-                <th>Freezing Air</th>
+                <th>Freezing Temperatures</th>
             </tr>
             <tr>
                 <th><input type="checkbox" id="emfT" onclick="check()"></th>
@@ -86,23 +86,85 @@
     </div>
 
 
-
     <div class="column">
         <h3>Possible Ghosts</h3>
-        <ul>
-            <li><label id="phantom">Phantom</label></li>
-            <li><label id="banshee">Banshee</label></li>
-            <li><label id="mare">Mare</label></li>
-            <li><label id="yurei">Yurei</label></li>
-            <li><label id="demon">Demon</label></li>
-            <li><label id="wraith">Wraith</label></li>
-            <li><label id="jinn">Jinn</label></li>
-            <li><label id="shade">Shade</label></li>
-            <li><label id="oni">Oni</label></li>
-            <li><label id="revenant">Revenant</label></li>
-            <li><label id="poltergeist">Poltergeist</label></li>
-            <li><label id="spirit">Spirit</label></li>
-        </ul>
+
+
+        <table>
+            <tr id="phantom">
+                <th><strong>Phantom</strong></th>
+                <th>Freezing Temps</th>
+                <th>EMF 5</th>
+                <th>Ghost Orbs</th>
+            </tr>
+            <tr id="banshee">
+                <th><strong>Banshee</strong></th>
+                <th>Freezing Temps</th>
+                <th>EMF 5</th>
+                <th>Fingerprints</th>
+            </tr>
+            <tr id="mare">
+                <th><strong>Mare</strong></th>
+                <th>Freezing Temps</th>
+                <th>Ghost Orbs</th>
+                <th>Spirit Box</th>
+            </tr>
+            <tr id="yurei">
+                <th><strong>Yurei</strong></th>
+                <th>Freezing Temps</th>
+                <th>Ghost Orbs</th>
+                <th>Ghost Writing</th>
+            </tr>
+            <tr id="demon">
+                <th><strong>Demon</strong></th>
+                <th>Freezing Temps</th>
+                <th>Spirit Box</th>
+                <th>Ghost Writing</th>
+            </tr>
+            <tr id="wraith">
+                <th><strong>Wraith</strong></th>
+                <th>Freezing Temps</th>
+                <th>Spirit Box</th>
+                <th>Fingerprints</th>
+            </tr>
+            <tr id="jinn">
+                <th><strong>Jinn</strong></th>
+                <th>EMF 5</th>
+                <th>Ghost Orbs</th>
+                <th>Spirit Box</th>
+            </tr>
+            <tr id="shade">
+                <th><strong>Shade</strong></th>
+                <th>EMF 5</th>
+                <th>Ghost Orbs</th>
+                <th>Ghost Writing</th>
+            </tr>
+            <tr id="oni">
+                <th><strong>Oni</strong></th>
+                <th>EMF 5</th>
+                <th>Spirit Box</th>
+                <th>Ghost Writing</th>
+            </tr>
+            <tr id="revenant">
+                <th><strong>Revenant</strong></th>
+                <th>EMF 5</th>
+                <th>Ghost Writing</th>
+                <th>Fingerprints</th>
+            </tr>
+            <tr id="poltergeist">
+                <th><strong>Poltergeist</strong></th>
+                <th>Ghost Orbs</th>
+                <th>Spirit Box</th>
+                <th>Fingerprints</th>
+            </tr>
+            <tr id="spirit">
+                <th><strong>Spirit</strong></th>
+                <th>Spirit Box</th>
+                <th>Ghost Writing</th>
+                <th>Fingerprints</th>
+            </tr>
+        </table>
+
     </div>
 
 </div>
@@ -296,151 +358,6 @@ function check() {
 
 
 }
-
-
-// function frzIf() {
-
-//     if (f.checked == true){
-
-//         ji.style.color = "#cecece";
-//         sh.style.color = "#cecece";
-//         on.style.color = "#cecece";
-//         re.style.color = "#cecece";
-//         po.style.color = "#cecece";
-//         sp.style.color = "#cecece";
-
-//     } 
-//     else {
-
-//         ji.style.color = "black";
-//         sh.style.color = "black";
-//         on.style.color = "black";
-//         re.style.color = "black";
-//         po.style.color = "black";
-//         sp.style.color = "black";
-//     }
-
-
-
-
-
-
-// }
-
-// function emfIf() {
-
-//     if (e.checked == true){
-
-//         ma.style.color = "#cecece";
-//         yu.style.color = "#cecece";
-//         de.style.color = "#cecece";
-//         wr.style.color = "#cecece";
-//         po.style.color = "#cecece";
-//         sp.style.color = "#cecece";
-
-//     } 
-//     else {
-
-//         ma.style.color = "#000000";
-//         yu.style.color = "#000000";
-//         de.style.color = "#000000";
-//         wr.style.color = "#000000";
-//         po.style.color = "#000000";
-//         sp.style.color = "#000000";
-
-//     }
-// }
-
-// function orbIf() {
-
-//     if (o.checked == true){
-
-//         ba.style.color = "#cecece";
-//         de.style.color = "#cecece";
-//         wr.style.color = "#cecece";
-//         on.style.color = "#cecece";
-//         re.style.color = "#cecece";
-//         sp.style.color = "#cecece";
-
-// }
-//     else {
-//         ba.style.color = "#000000";
-//         de.style.color = "#000000";
-//         wr.style.color = "#000000";
-//         on.style.color = "#000000";
-//         re.style.color = "#000000";
-//         sp.style.color = "#000000";
-//     }
-// }
-
-// function sprIf() {
-
-//     if (s.checked == true) {
-
-//         ba.style.color = "#cecece";
-//         re.style.color = "#cecece";
-//         ph.style.color = "#cecece";
-//         yu.style.color = "#cecece";
-//         sh.style.color = "#cecece";
-
-//     }
-//     else {
-//         ba.style.color = "#000000";
-//         re.style.color = "#000000";
-//         ph.style.color = "#000000";
-//         yu.style.color = "#000000";
-//         sh.style.color = "#000000";
-//     }
-// }
-
-// function bookIf() {
-
-//     if (b.checked == true) {
-
-//         ba.style.color = "#cecece";
-//         ph.style.color = "#cecece";
-//         wr.style.color = "#cecece";
-//         ma.style.color = "#cecece";
-//         ji.style.color = "#cecece";
-//         po.style.color = "#cecece";
-
-//     }
-//     else {
-
-//         ba.style.color = "#000000";
-//         ph.style.color = "#000000";
-//         wr.style.color = "#000000";
-//         ma.style.color = "#000000";
-//         ji.style.color = "#000000";
-//         po.style.color = "#000000";
-//     }
-// }
-
-// function printIf() {
-
-//     if (p.checked == true) {
-
-//         ph.style.color = "#cecece";
-//         ma.style.color = "#cecece";
-//         ji.style.color = "#cecece";
-//         yu.style.color = "#cecece";
-//         sh.style.color = "#cecece";
-//         de.style.color = "#cecece";
-//         on.style.color = "#cecece";
-
-//     }
-//     else {
-
-//         ph.style.color = "#000000";
-//         ma.style.color = "#000000";
-//         ji.style.color = "#000000";
-//         yu.style.color = "#000000";
-//         sh.style.color = "#000000";
-//         de.style.color = "#000000";
-//         on.style.color = "#000000";
-//     }
-// }
-
 
 </script>
 
