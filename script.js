@@ -300,8 +300,7 @@ function calculate() {
 calculate()
 
 
-
-function check() {
+function checkT() {
 
     // reset
 
@@ -312,169 +311,134 @@ function check() {
     
     if (frzT.checked == true){
 
+        frzF.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].frz == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].frz == false) {GhostLibrary[i].visible = false}
         }
-
     } 
-    
     
     if (emfT.checked == true){
 
+        emfF.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].emf == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].emf == false) {GhostLibrary[i].visible = false}
         }
         
     } 
 
     if (orbT.checked == true){
 
+        orbF.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].orb == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].orb == false) {GhostLibrary[i].visible = false }
         }
 
     }
 
     if (boxT.checked == true) {
 
+        boxF.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].box == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].box == false) { GhostLibrary[i].visible = false}
         }
 
     }
 
     if (writeT.checked == true) {
 
+        writeF.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].write == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].write == false) {GhostLibrary[i].visible = false}
         }
 
     }
 
     if (printT.checked == true) {
 
+        printF.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].print == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].print == false) {GhostLibrary[i].visible = false}
         }
     
     }
 
 
+    visibility()
+
+    calculate()
+
+}
+
+function checkF() {
+
+    // reset
+
+    visibility()
+
+    reset()
+
+
     if (frzF.checked == true){
 
+        frzT.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].frz == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].frz == true) {GhostLibrary[i].visible = false}
         }
     } 
 
     if (emfF.checked == true){
 
+        emfT.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].emf == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].emf == true) { GhostLibrary[i].visible = false}
         }
     
     } 
 
     if (orbF.checked == true){ 
 
+        orbT.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].orb == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].orb == true) {GhostLibrary[i].visible = false}
         }
 
     }
 
     if (boxF.checked == true) {
 
+        boxT.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].box == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].box == true) {GhostLibrary[i].visible = false}
         }
       
     }
 
     if (writeF.checked == true) {
+
+        writeT.checked = false
     
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].write == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].write == true) {GhostLibrary[i].visible = false}
         }
     
     }
 
     if (printF.checked == true) {
 
+        printT.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].print == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].print == true) {GhostLibrary[i].visible = false}
         }
 
     }
@@ -485,8 +449,6 @@ function check() {
     calculate()
 
 }
-
-
 
 
 function openCity(evt, cityName) {
