@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1>Phasmophobia Ghost Classifier v1.4 
+<h1>Phasmophobia Ghost Classifier v1.6 
     
 </h1>
 
@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <th><input type="checkbox" id="printT" onclick="check()"></th>
-                <th> <input type="checkbox" id="printF" onclick="check()"></th>
+                <th><input type="checkbox" id="printF" onclick="check()"></th>
                 <th>Fingerprints</th>
                 <th id="printP"> </th>
             </tr>
@@ -201,6 +201,26 @@
                     <div class="column2">Spirit Box</div>
                     <div class="column2">Ghost Writing</div>
                     <div class="column2">Fingerprints</div>
+                </div>
+            </button>
+
+            <!-- Hantu -->
+            <button id="han" class="tablinks" onclick="openCity(event, 'hantu')">
+                <div class="row" > 
+                    <div class="column2"><strong>Hantu</strong></div>
+                    <div class="column2">Ghost Orbs</div>
+                    <div class="column2">Ghost Writing</div>
+                    <div class="column2">Fingerprints</div>
+                </div>
+            </button>
+
+            <!-- Yokai -->
+            <button id="yok" class="tablinks" onclick="openCity(event, 'yokai')">
+                <div class="row" > 
+                    <div class="column2"><strong>Yokai</strong></div>
+                    <div class="column2">Spirit Box</div>
+                    <div class="column2">Ghost Writing</div>
+                    <div class="column2">Ghost Orbs</div>
                 </div>
             </button>
 
@@ -360,6 +380,32 @@
                 <strong>Strengths:</strong> The spirit has no discernible strengths, however it is known to increase its hunting as your sanity drops.
                 <br><br>
                 <strong>Weaknesses:</strong> Using Smudge Sticks on a Spirit will stop it attacking for 180 seconds instead of 90.
+            </p>
+        </div>
+
+        <div id="hantu" class="tabcontent" style="display:none">
+            <h3>Hantu</h3>
+            <h4>Danger Rank - ?</h5>
+                <br>
+            <p>
+                During a Hunt, its speed is fully based on the temperature of the rooms that it goes through. This means that the Hantu is highly dependent on the Breaker state of the building, as the presence of power keeps the building warm and thus slows the Hantu down.
+                <br><br>
+                <strong>Strengths:</strong> Hantu moves faster in colder areas.
+                <br><br>
+                <strong>Weaknesses:</strong> Hantu moves slower in warmer areas.
+            </p>
+        </div>
+
+        <div id="yokai" class="tabcontent" style="display:none">
+            <h3>Yokai</h3>
+            <h4>Danger Rank - ?</h5>
+                <br>
+            <p>
+                It has a very unique behavior, in which it becomes more aggressive while players are speaking nearby. This allows it to start a Hunt even at high Sanity levels. Although the Yokai is very sensitive to voices, while it is hunting, the radius in which it can hear players is much smaller compared to the other Ghost types.
+                <br><br>
+                <strong>Strengths:</strong> Talking near a Yokai will anger it and cause it to attack more often.
+                <br><br>
+                <strong>Weaknesses:</strong> While hunting, it can only hear voices close to it.
             </p>
         </div>
 
