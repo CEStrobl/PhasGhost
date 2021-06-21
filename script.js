@@ -32,6 +32,8 @@ var oni = document.getElementById("oni");
 var rev = document.getElementById("rev");
 var pol = document.getElementById("pol");
 var spi = document.getElementById("spi");
+var han = document.getElementById("han");
+var yok = document.getElementById("yok");
 
 
 var defaultColor = "white"
@@ -173,17 +175,39 @@ let spirit = {
     print: true,
 }
 
+let hantu = {
+    name: "hantu",
+    visible: true,
+    frz: true,
+    emf: true,
+    orb: true,
+    box: true,
+    write: true,
+    print: true,
+}
+
+let yokai = {
+    name: "yokai",
+    visible: true,
+    frz: false,
+    emf: false,
+    orb: true,
+    box: true,
+    write: true,
+    print: false,
+}
+
 
 
 
 let GhostLibrary = 
 [
-    phantom, banshee, mare, yurei, demon, wraith, jinn, shade, ooni, revenant, poltergeist, spirit
+    phantom, banshee, mare, yurei, demon, wraith, jinn, shade, ooni, revenant, poltergeist, spirit, hantu, yokai
 ]
 
 let VarLibrary =
 [
-    pha, ban, mar, yur, dem, wra, jin, sha, oni, rev, pol, spi,
+    pha, ban, mar, yur, dem, wra, jin, sha, oni, rev, pol, spi, han, yok
 ]
 let PerVarLibrary = 
 [
@@ -207,7 +231,7 @@ function visibility(){
         if (GhostLibrary[i].visible == true) {
 
             VarLibrary[i].style.color = defaultColor
-
+            
         }
 
     }
@@ -266,15 +290,15 @@ function calculate() {
 
     for(i = 0; i < PerVarLibrary.length; i++) {
 
-
+        
 
         if (PerVarLibrary[i].innerHTML > 70 ) {
-
+            
             PerVarLibrary[i].style.color = '#4d744e'
         }
 
         else if (PerVarLibrary[i].innerHTML > 50 ) {
-
+            
             PerVarLibrary[i].style.color = '#797d3e'
         }
 
@@ -297,8 +321,8 @@ function calculate() {
     }
 
 }
-calculate()
 
+calculate()
 
 
 function check() {
@@ -309,182 +333,143 @@ function check() {
 
     reset()
 
+    
+    if (frzT.checked == true) {
 
-    if (frzT.checked == true){
+        frzF.checked = false
 
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].frz == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].frz == false) {GhostLibrary[i].visible = false}
         }
+    } 
+    
+    if (emfT.checked == true) {
 
+        emfF.checked = false
+
+        for(i = 0; i < GhostLibrary.length; i++) {
+            if (GhostLibrary[i].emf == false) {GhostLibrary[i].visible = false}
+        }
+        
     } 
 
+    if (orbT.checked == true) {
 
-    if (emfT.checked == true){
-
-        for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].emf == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
-        }
-
-    } 
-
-    if (orbT.checked == true){
+        orbF.checked = false
 
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].orb == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].orb == false) {GhostLibrary[i].visible = false }
         }
 
     }
 
     if (boxT.checked == true) {
 
+        boxF.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].box == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].box == false) { GhostLibrary[i].visible = false}
         }
 
     }
 
     if (writeT.checked == true) {
 
+        writeF.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].write == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].write == false) {GhostLibrary[i].visible = false}
         }
 
     }
 
     if (printT.checked == true) {
 
+        printF.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].print == false) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].print == false) {GhostLibrary[i].visible = false}
         }
-
+    
     }
 
 
-    if (frzF.checked == true){
+
+
+
+    if (frzF.checked == true) {
+
+        frzT.checked = false
 
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].frz == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].frz == true) {GhostLibrary[i].visible = false}
         }
     } 
 
-    if (emfF.checked == true){
+    if (emfF.checked == true) {
+
+        emfT.checked = false
 
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].emf == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].emf == true) { GhostLibrary[i].visible = false}
         }
-
+    
     } 
 
-    if (orbF.checked == true){ 
+    if (orbF.checked == true) { 
+
+        orbT.checked = false
 
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].orb == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].orb == true) {GhostLibrary[i].visible = false}
         }
 
     }
 
     if (boxF.checked == true) {
 
+        boxT.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].box == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].box == true) {GhostLibrary[i].visible = false}
         }
-
+      
     }
 
     if (writeF.checked == true) {
 
+        writeT.checked = false
+    
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].write == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].write == true) {GhostLibrary[i].visible = false}
         }
-
+    
     }
 
     if (printF.checked == true) {
 
+        printT.checked = false
+
         for(i = 0; i < GhostLibrary.length; i++) {
-
-            if (GhostLibrary[i].print == true) {
-
-                GhostLibrary[i].visible = false
-
-            }
-
+            if (GhostLibrary[i].print == true) {GhostLibrary[i].visible = false}
         }
 
     }
-
 
     visibility()
 
     calculate()
 
 }
+
+
+
+
+
+
+
+
+
 
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
