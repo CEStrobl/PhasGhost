@@ -178,10 +178,10 @@ let spirit = {
 let hantu = {
     name: "hantu",
     visible: true,
-    frz: true,
-    emf: true,
+    frz: false,
+    emf: false,
     orb: true,
-    box: true,
+    box: false,
     write: true,
     print: true,
 }
