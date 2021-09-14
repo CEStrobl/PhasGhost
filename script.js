@@ -47,7 +47,6 @@ var cancelColor = "#323342"
 
 
 
-
 let phantom = {
     name: "phantom",
     visible: true,
