@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1>Phasmophobia Ghost Classifier v1.6 
+<h1>Phasmophobia Ghost Classifier v1.7 
     
 </h1>
 
@@ -42,7 +42,7 @@
             <tr>
                 <th><input type="checkbox" id="orbT" onclick="check()"></th>
                 <th><input type="checkbox" id="orbF" onclick="check()"></th>
-                <th>Ghost Orbs</th>
+                <th>Orbs</th>
                 <th id="orbP"> </th>
             </tr>
             <tr>
@@ -54,7 +54,7 @@
             <tr>
                 <th><input type="checkbox" id="writeT" onclick="check()"></th>
                 <th><input type="checkbox" id="writeF" onclick="check()"></th>
-                <th>Ghost Writing</th>
+                <th>Writing</th>
                 <th id="writeP"> </th>
             </tr>
             <tr>
@@ -62,6 +62,12 @@
                 <th><input type="checkbox" id="printF" onclick="check()"></th>
                 <th>Fingerprints</th>
                 <th id="printP"> </th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="dotT" onclick="check()"></th>
+                <th><input type="checkbox" id="dotF" onclick="check()"></th>
+                <th>D.O.T.S</th>
+                <th id="dotP"> </th>
             </tr>
         </table>
 
@@ -88,9 +94,9 @@
             <button id="pha" class="tablinks" onclick="openCity(event, 'phantom')">
                 <div class="row" > 
                     <div class="column2"><strong>Phantom</strong></div>
-                    <div class="column2">Freezing Temps</div>
-                    <div class="column2">EMF 5</div>
-                    <div class="column2">Ghost Orbs</div>
+                    <div class="column2">Spirit Box</div>
+                    <div class="column2">Fingerprints</div>
+                    <div class="column2">D.O.T.S</div>
                 </div>
             </button>
   
@@ -98,9 +104,9 @@
             <button id="ban" class="tablinks" onclick="openCity(event, 'banshee')">
                 <div class="row" > 
                     <div class="column2"><strong>Banshee</strong></div>
-                    <div class="column2">Freezing Temps</div>
-                    <div class="column2">EMF 5</div>
+                    <div class="column2">Orbs</div>
                     <div class="column2">Fingerprints</div>
+                    <div class="column2">D.O.T.S</div>
                 </div>
             </button>
 
@@ -108,9 +114,9 @@
             <button id="mar" class="tablinks" onclick="openCity(event, 'mare')">
                 <div class="row" > 
                     <div class="column2"><strong>Mare</strong></div>
-                    <div class="column2">Freezing Temps</div>
-                    <div class="column2">Ghost Orbs</div>
+                    <div class="column2">Orbs</div>
                     <div class="column2">Spirit Box</div>
+                    <div class="column2">Writing</div>
                 </div>
             </button>
 
@@ -118,9 +124,9 @@
             <button  id="yur" class="tablinks" onclick="openCity(event, 'yurei')">
                 <div class="row" > 
                     <div class="column2"><strong>Yurei</strong></div>
+                    <div class="column2">Orbs</div>
                     <div class="column2">Freezing Temps</div>
-                    <div class="column2">Ghost Orbs</div>
-                    <div class="column2">Ghost Writing</div>
+                    <div class="column2">D.O.T.S</div>
                 </div>
             </button>
 
@@ -129,8 +135,8 @@
                 <div class="row" > 
                     <div class="column2"><strong>Demon</strong></div>
                     <div class="column2">Freezing Temps</div>
-                    <div class="column2">Spirit Box</div>
-                    <div class="column2">Ghost Writing</div>
+                    <div class="column2">Fingerprints</div>
+                    <div class="column2">Writing</div>
                 </div>
             </button>
 
@@ -138,9 +144,9 @@
             <button id="wra" class="tablinks" onclick="openCity(event, 'wraith')">
                 <div class="row" > 
                     <div class="column2"><strong>Wraith</strong></div>
-                    <div class="column2">Freezing Temps</div>
+                    <div class="column2">EMF 5</div>
                     <div class="column2">Spirit Box</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column2">D.O.T.S</div>
                 </div>
             </button>
 
@@ -149,8 +155,8 @@
                 <div class="row" > 
                     <div class="column2"><strong>Jinn</strong></div>
                     <div class="column2">EMF 5</div>
-                    <div class="column2">Ghost Orbs</div>
-                    <div class="column2">Spirit Box</div>
+                    <div class="column2">Freezing Temps</div>
+                    <div class="column2">Fingerprints</div>
                 </div>
             </button>
 
@@ -159,8 +165,8 @@
                 <div class="row" > 
                     <div class="column2"><strong>Shade</strong></div>
                     <div class="column2">EMF 5</div>
-                    <div class="column2">Ghost Orbs</div>
-                    <div class="column2">Ghost Writing</div>
+                    <div class="column2">Freezing Temps</div>
+                    <div class="column2">Writing</div>
                 </div>
             </button>
 
@@ -169,8 +175,8 @@
                 <div class="row" > 
                     <div class="column2"><strong>Oni</strong></div>
                     <div class="column2">EMF 5</div>
-                    <div class="column2">Spirit Box</div>
-                    <div class="column2">Ghost Writing</div>
+                    <div class="column2">Freezing Temps</div>
+                    <div class="column2">D.O.T.S</div>
                 </div>
             </button>
 
@@ -178,9 +184,9 @@
             <button id="rev" class="tablinks" onclick="openCity(event, 'revenant')">
                 <div class="row" > 
                     <div class="column2"><strong>Revenant</strong></div>
-                    <div class="column2">EMF 5</div>
-                    <div class="column2">Ghost Writing</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column2">Orbs</div>
+                    <div class="column2">Freezing Temps</div>
+                    <div class="column2">Writing</div>
                 </div>
             </button>
 
@@ -188,9 +194,9 @@
             <button id="pol" class="tablinks" onclick="openCity(event, 'poltergeist')">
                 <div class="row" > 
                     <div class="column2"><strong>Poltergeist</strong></div>
-                    <div class="column2">Ghost Orbs</div>
                     <div class="column2">Spirit Box</div>
                     <div class="column2">Fingerprints</div>
+                    <div class="column2">Writing</div>
                 </div>
             </button>
 
@@ -198,9 +204,9 @@
             <button id="spi" class="tablinks" onclick="openCity(event, 'spirit')">
                 <div class="row" > 
                     <div class="column2"><strong>Spirit</strong></div>
+                    <div class="column2">EMF 5</div>
                     <div class="column2">Spirit Box</div>
-                    <div class="column2">Ghost Writing</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column2">Writing</div>
                 </div>
             </button>
 
@@ -208,8 +214,8 @@
             <button id="han" class="tablinks" onclick="openCity(event, 'hantu')">
                 <div class="row" > 
                     <div class="column2"><strong>Hantu</strong></div>
-                    <div class="column2">Ghost Orbs</div>
-                    <div class="column2">Ghost Writing</div>
+                    <div class="column2">Orbs</div>
+                    <div class="column2">Freezing Temps</div>
                     <div class="column2">Fingerprints</div>
                 </div>
             </button>
@@ -218,9 +224,29 @@
             <button id="yok" class="tablinks" onclick="openCity(event, 'yokai')">
                 <div class="row" > 
                     <div class="column2"><strong>Yokai</strong></div>
-                    <div class="column2">Spirit Box</div>
-                    <div class="column2">Ghost Writing</div>
-                    <div class="column2">Ghost Orbs</div>
+                    <div class="column2">Orbs</div>
+                    <div class="column2">Freezing Temps</div>
+                    <div class="column2">D.O.T.S</div>
+                </div>
+            </button>
+
+            <!-- Goryo -->
+            <button id="gor" class="tablinks" onclick="openCity(event, 'goryo')">
+                <div class="row" > 
+                    <div class="column2"><strong>Goryo</strong></div>
+                    <div class="column2">EMF 5</div>
+                    <div class="column2">Fingerprints</div>
+                    <div class="column2">D.O.T.S</div>
+                </div>
+            </button>
+
+            <!-- Myling -->
+            <button id="myl" class="tablinks" onclick="openCity(event, 'myling')">
+                <div class="row" > 
+                    <div class="column2"><strong>Myling</strong></div>
+                    <div class="column2">EMF 5</div>
+                    <div class="column2">Fingerprints</div>
+                    <div class="column2">Writing</div>
                 </div>
             </button>
 
@@ -242,7 +268,7 @@
 
         <div id="banshee" class="tabcontent" style="display:none">
             <h3>Banshee</h3>
-            <h4>Danger Rank - A</h5>
+            <h4>Danger Rank - B</h5>
                 <br>
               <p>
                 A Banshee is a natural hunter and will attack anything. It has been known to stalk its prey one at a time until making its kill.
@@ -281,7 +307,7 @@
 
         <div id="demon" class="tabcontent" style="display:none">
             <h3>Demon</h3>
-            <h4>Danger Rank - B</h5>
+            <h4>Danger Rank - A</h5>
                 <br>
             <p>
                 A Demon is one of the worst Ghosts you can encounter. It has been known to attack without a reason.
@@ -294,7 +320,7 @@
 
         <div id="wraith" class="tabcontent" style="display:none">
             <h3>Wraith</h3>
-            <h4>Danger Rank - A</h5>
+            <h4>Danger Rank - C</h5>
                 <br>
             <p>
                 A Wraith is one of the most dangerous Ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.
@@ -307,7 +333,7 @@
 
         <div id="jinn" class="tabcontent" style="display:none">
             <h3>Jinn</h3>
-            <h4>Danger Rank - B</h5>
+            <h4>Danger Rank - A</h5>
                 <br>
             <p>
                 A Jinn is a territorial Ghost that will attack when threatened. It also has been known to travel at significant speed.
@@ -385,7 +411,7 @@
 
         <div id="hantu" class="tabcontent" style="display:none">
             <h3>Hantu</h3>
-            <h4>Danger Rank - ?</h5>
+            <h4>Danger Rank - C</h5>
                 <br>
             <p>
                 During a Hunt, its speed is fully based on the temperature of the rooms that it goes through. This means that the Hantu is highly dependent on the Breaker state of the building, as the presence of power keeps the building warm and thus slows the Hantu down.
@@ -398,7 +424,7 @@
 
         <div id="yokai" class="tabcontent" style="display:none">
             <h3>Yokai</h3>
-            <h4>Danger Rank - ?</h5>
+            <h4>Danger Rank - A</h5>
                 <br>
             <p>
                 It has a very unique behavior, in which it becomes more aggressive while players are speaking nearby. This allows it to start a Hunt even at high Sanity levels. Although the Yokai is very sensitive to voices, while it is hunting, the radius in which it can hear players is much smaller compared to the other Ghost types.
@@ -406,6 +432,33 @@
                 <strong>Strengths:</strong> Talking near a Yokai will anger it and cause it to attack more often.
                 <br><br>
                 <strong>Weaknesses:</strong> While hunting, it can only hear voices close to it.
+            </p>
+        </div>
+
+
+        <div id="goryo" class="tabcontent" style="display:none">
+            <h3>Goryo</h3>
+            <h4>Danger Rank - ?</h5>
+                <br>
+            <p>
+                
+                <br><br>
+                <strong>Strengths:</strong> Goryo will usually only show itself on camera when there are no people nearby.
+                <br><br>
+                <strong>Weaknesses:</strong> Goryo are rarely seen far from their place of death.
+            </p>
+        </div>
+
+        <div id="myling" class="tabcontent" style="display:none">
+            <h3>Myling</h3>
+            <h4>Danger Rank - ?</h5>
+                <br>
+            <p>
+                
+                <br><br>
+                <strong>Strengths:</strong> A Myling is known to be quieter when hunting.
+                <br><br>
+                <strong>Weaknesses:</strong> Mylings more frequently make paranormal sounds.
             </p>
         </div>
 
