@@ -4,7 +4,7 @@ var orbT = document.getElementById("orbT");
 var boxT = document.getElementById("boxT");
 var writeT = document.getElementById("writeT");
 var printT = document.getElementById("printT");
-var dotP = document.getElementById("dotT");
+var dotT = document.getElementById("dotT");
 
 var frzF = document.getElementById("frzF");
 var emfF = document.getElementById("emfF");
@@ -12,7 +12,7 @@ var orbF = document.getElementById("orbF");
 var boxF = document.getElementById("boxF");
 var writeF = document.getElementById("writeF");
 var printF = document.getElementById("printF");
-var dotP = document.getElementById("dotF");
+var dotF = document.getElementById("dotF");
 
 var frzP = document.getElementById("frzP");
 var emfP = document.getElementById("emfP");
