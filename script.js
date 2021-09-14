@@ -4,6 +4,7 @@ var orbT = document.getElementById("orbT");
 var boxT = document.getElementById("boxT");
 var writeT = document.getElementById("writeT");
 var printT = document.getElementById("printT");
+var dotP = document.getElementById("dotT");
 
 var frzF = document.getElementById("frzF");
 var emfF = document.getElementById("emfF");
@@ -11,6 +12,7 @@ var orbF = document.getElementById("orbF");
 var boxF = document.getElementById("boxF");
 var writeF = document.getElementById("writeF");
 var printF = document.getElementById("printF");
+var dotP = document.getElementById("dotF");
 
 var frzP = document.getElementById("frzP");
 var emfP = document.getElementById("emfP");
@@ -18,6 +20,7 @@ var orbP = document.getElementById("orbP");
 var boxP = document.getElementById("boxP");
 var writeP = document.getElementById("writeP");
 var printP = document.getElementById("printP");
+var dotP = document.getElementById("dotP");
 
 
 var pha = document.getElementById("pha");
@@ -34,6 +37,8 @@ var pol = document.getElementById("pol");
 var spi = document.getElementById("spi");
 var han = document.getElementById("han");
 var yok = document.getElementById("yok");
+var gor = document.getElementById("gor");
+var myl = document.getElementById("myl");
 
 
 var defaultColor = "white"
@@ -46,34 +51,37 @@ var cancelColor = "#323342"
 let phantom = {
     name: "phantom",
     visible: true,
-    frz: true,
-    emf: true,
-    orb: true,
-    box: false,
+    frz: false,
+    emf: false,
+    orb: false,
+    box: true,
     write: false,
-    print: false,
+    print: true,
+    dot: true,
 }
 
 let banshee = {
     name: "banshee",
     visible: true,
-    frz: true,
-    emf: true,
-    orb: false,
+    frz: false,
+    emf: false,
+    orb: true,
     box: false,
     write: false,
     print: true,
+    dot: true,
 }
 
 let mare = {
     name: "mare",
     visible: true,
-    frz: true,
+    frz: false,
     emf: false,
     orb: true,
     box: true,
-    write: false,
+    write: true,
     print: false,
+    dot: false,
 }
 
 let yurei = {
@@ -83,8 +91,9 @@ let yurei = {
     emf: false,
     orb: true,
     box: false,
-    write: true,
+    write: false,
     print: false,
+    dot: true,
 }
 
 let demon = {
@@ -93,64 +102,70 @@ let demon = {
     frz: true,
     emf: false,
     orb: false,
-    box: true,
+    box: false,
     write: true,
-    print: false,
+    print: true,
+    dot: false,
 }
 
 let wraith = {
     name: "wraith",
     visible: true,
-    frz: true,
-    emf: false,
+    frz: false,
+    emf: true,
     orb: false,
     box: true,
     write: false,
-    print: true,
+    print: false,
+    dot: true,
 }
 
 let jinn = {
     name: "jinn",
     visible: true,
-    frz: false,
+    frz: true,
     emf: true,
-    orb: true,
-    box: true,
+    orb: false,
+    box: false,
     write: false,
-    print: false,
+    print: true,
+    dot: false,
 }
 
 let shade = {
     name: "shade",
     visible: true,
-    frz: false,
+    frz: true,
     emf: true,
-    orb: true,
+    orb: false,
     box: false,
     write: true,
     print: false,
+    dot: false,
 }
 
 let ooni = {
     name: "oni",
     visible: true,
-    frz: false,
+    frz: true,
     emf: true,
     orb: false,
-    box: true,
-    write: true,
+    box: false,
+    write: false,
     print: false,
+    dot: true,
 }
 
 let revenant = {
     name: "revenant",
     visible: true,
-    frz: false,
-    emf: true,
-    orb: false,
+    frz: true,
+    emf: false,
+    orb: true,
     box: false,
     write: true,
-    print: true,
+    print: false,
+    dot: false,
 }
 
 let poltergeist = {
@@ -158,60 +173,88 @@ let poltergeist = {
     visible: true,
     frz: false,
     emf: false,
-    orb: true,
+    orb: false,
     box: true,
-    write: false,
+    write: true,
     print: true,
+    dot: false,
 }
 
 let spirit = {
     name: "spirit",
     visible: true,
     frz: false,
-    emf: false,
+    emf: true,
     orb: false,
     box: true,
     write: true,
-    print: true,
+    print: false,
+    dot: false,
 }
 
 let hantu = {
     name: "hantu",
     visible: true,
-    frz: false,
+    frz: true,
     emf: false,
     orb: true,
     box: false,
-    write: true,
+    write: false,
     print: true,
+    dot: false,
 }
 
 let yokai = {
     name: "yokai",
     visible: true,
-    frz: false,
+    frz: true,
     emf: false,
     orb: true,
-    box: true,
-    write: true,
+    box: false,
+    write: false,
     print: false,
+    dot: true,
 }
 
+let goryo = {
+    name: "goryo",
+    visible: true,
+    frz: false,
+    emf: true,
+    orb: false,
+    box: false,
+    write: false,
+    print: true,
+    dot: true,
+}
+
+let myling = {
+    name: "myling",
+    visible: true,
+    frz: false,
+    emf: true,
+    orb: false,
+    box: false,
+    write: true,
+    print: true,
+    dot: false,
+}
 
 
 
 let GhostLibrary = 
 [
-    phantom, banshee, mare, yurei, demon, wraith, jinn, shade, ooni, revenant, poltergeist, spirit, hantu, yokai
+    phantom, banshee, mare, yurei, demon, wraith, jinn, shade, ooni, revenant, poltergeist, spirit, hantu, yokai, goryo, myling
 ]
 
 let VarLibrary =
 [
-    pha, ban, mar, yur, dem, wra, jin, sha, oni, rev, pol, spi, han, yok
+    pha, ban, mar, yur, dem, wra, jin, sha, oni, rev, pol, spi, han, yok, gor, myl
 ]
+
 let PerVarLibrary = 
 [
-    frzP, emfP, orbP, boxP, writeP, printP
+    frzP, emfP, orbP, boxP, writeP, printP, dotP
 ]
 
 
@@ -260,6 +303,7 @@ function calculate() {
     let boxTally = 0
     let writeTally = 0
     let printTally = 0
+    let dotTally = 0
 
     for(i = 0; i < GhostLibrary.length; i++) {
 
@@ -273,6 +317,7 @@ function calculate() {
             if(GhostLibrary[i].box == true) {boxTally++}
             if(GhostLibrary[i].write == true) {writeTally++}
             if(GhostLibrary[i].print == true) {printTally++}
+            if(GhostLibrary[i].dot == true) {dotTally++}
 
         }
     }
@@ -286,6 +331,7 @@ function calculate() {
     boxP.innerHTML = Math.round((boxTally/visTally)*100)
     writeP.innerHTML = Math.round((writeTally/visTally)*100)
     printP.innerHTML = Math.round((printTally/visTally)*100)
+    dotP.innerHTML = Math.round((dotTally/visTally)*100)
 
 
     for(i = 0; i < PerVarLibrary.length; i++) {
@@ -393,6 +439,16 @@ function check() {
     
     }
 
+    if (dotT.checked == true) {
+
+        dotF.checked = false
+
+        for(i = 0; i < GhostLibrary.length; i++) {
+            if (GhostLibrary[i].dot == false) {GhostLibrary[i].visible = false}
+        }
+    
+    }
+
 
 
 
@@ -452,6 +508,16 @@ function check() {
 
         for(i = 0; i < GhostLibrary.length; i++) {
             if (GhostLibrary[i].print == true) {GhostLibrary[i].visible = false}
+        }
+
+    }
+
+    if (dotF.checked == true) {
+
+        dotT.checked = false
+
+        for(i = 0; i < GhostLibrary.length; i++) {
+            if (GhostLibrary[i].dot == true) {GhostLibrary[i].visible = false}
         }
 
     }
