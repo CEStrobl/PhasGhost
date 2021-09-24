@@ -28,13 +28,19 @@ body {
 /* ghost evidence info */
 .column2 {
     float: left;
-    width: 25%;
+    width: 20%;
 }
 
 /* evidence */
 .column3 {
     float: left;
     width: 20%;
+}
+/* blank evidence */
+.column4 {
+    float: left;
+    width: 20%;
+    color: transparent;
 }
 
 /* Clear floats after the columns */
@@ -122,7 +128,44 @@ body {
     background-color: #69140e;
 }
 
+.emoji {
+    color:white;
+    background-color: transparent; 
+    border: 2px solid #751e71;
+    margin: 0;
+    font-size: 15px;
+}
+  
+.emoji:hover {
+    background-color: #751e71;
+}
+.active {
+    background-color: #751e71;
+}
 
+
+
+
+
+
+.close {
+    height: 50px;
+    width: 50px;
+    padding:5px;
+    margin:5px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+    display:flex;
+    color:white;
+    background-color: transparent; 
+    border: 2px solid #69140e;
+}
+
+.close:hover {
+    background-color: #69140e;
+}
 
 
 
@@ -223,6 +266,7 @@ table h4 {
     text-transform: uppercase;
     text-align: center;
     font-size: 50px;
+    margin-top: 50px;
 }
   
 .tabcontent h4 {
