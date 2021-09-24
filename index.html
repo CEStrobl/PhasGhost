@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1>Phasmophobia Ghost Classifier v1.7 
+<h1>Phasmophobia Ghost Classifier v1.7.1
     
 </h1>
 
@@ -30,13 +30,13 @@
             <tr>
                 <th><input type="checkbox" id="frzT" onclick="check()"></th>
                 <th><input type="checkbox" id="frzF" onclick="check()"></th>
-                <th>Freezing Temps</th>
+                <th>Freezing</th>
                 <th id="frzP"></th>
             </tr>
             <tr>
                 <th></th>
                 <th></th>
-                <th>or</th>
+                <th style="font-size: smaller; color:rgba(255, 255, 255, 0.411)">or</th>
                 <th></th>
             </tr>
             <tr>
@@ -62,7 +62,7 @@
             <tr>
                 <th></th>
                 <th></th>
-                <th>or</th>
+                <th style="font-size: smaller; color:rgba(255, 255, 255, 0.411)">or</th>
                 <th></th>
             </tr>
             <tr>
@@ -89,7 +89,7 @@
             <tr>
                 <th></th>
                 <th></th>
-                <th>or</th>
+                <th style="font-size: smaller; color:rgba(255, 255, 255, 0.411)">or</th>
                 <th></th>
             </tr>
             
@@ -134,11 +134,14 @@
 
         <div class="tab">
 
+
+
             <!-- Phantom -->
             <button id="pha" class="tablinks" onclick="openCity(event, 'phantom')">
                 <div class="row" > 
                     <div class="column2"><strong>Phantom</strong></div>
                     <div class="column2">Spirit Box</div>
+                    <div class="column4">Blank</div>
                     <div class="column2">Fingerprints</div>
                     <div class="column2">D.O.T.S</div>
                 </div>
@@ -148,6 +151,7 @@
             <button id="ban" class="tablinks" onclick="openCity(event, 'banshee')">
                 <div class="row" > 
                     <div class="column2"><strong>Banshee</strong></div>
+                    <div class="column4">Blank</div>
                     <div class="column2">Orbs</div>
                     <div class="column2">Fingerprints</div>
                     <div class="column2">D.O.T.S</div>
@@ -158,9 +162,10 @@
             <button id="mar" class="tablinks" onclick="openCity(event, 'mare')">
                 <div class="row" > 
                     <div class="column2"><strong>Mare</strong></div>
-                    <div class="column2">Orbs</div>
                     <div class="column2">Spirit Box</div>
+                    <div class="column2">Orbs</div>
                     <div class="column2">Writing</div>
+                    <div class="column4">Blank</div>
                 </div>
             </button>
 
@@ -168,9 +173,10 @@
             <button  id="yur" class="tablinks" onclick="openCity(event, 'yurei')">
                 <div class="row" > 
                     <div class="column2"><strong>Yurei</strong></div>
+                    <div class="column2">Freezing</div>
                     <div class="column2">Orbs</div>
-                    <div class="column2">Freezing Temps</div>
                     <div class="column2">D.O.T.S</div>
+                    <div class="column4">Blank</div>
                 </div>
             </button>
 
@@ -178,9 +184,10 @@
             <button id="dem" class="tablinks" onclick="openCity(event, 'demon')">
                 <div class="row" > 
                     <div class="column2"><strong>Demon</strong></div>
-                    <div class="column2">Freezing Temps</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column2">Freezing</div>
+                    <div class="column4">Blank</div>
                     <div class="column2">Writing</div>
+                    <div class="column2">Fingerprints</div>
                 </div>
             </button>
 
@@ -188,9 +195,10 @@
             <button id="wra" class="tablinks" onclick="openCity(event, 'wraith')">
                 <div class="row" > 
                     <div class="column2"><strong>Wraith</strong></div>
-                    <div class="column2">EMF 5</div>
                     <div class="column2">Spirit Box</div>
+                    <div class="column2">EMF 5</div>
                     <div class="column2">D.O.T.S</div>
+                    <div class="column4">Blank</div>
                 </div>
             </button>
 
@@ -198,8 +206,9 @@
             <button id="jin" class="tablinks" onclick="openCity(event, 'jinn')">
                 <div class="row" > 
                     <div class="column2"><strong>Jinn</strong></div>
+                    <div class="column2">Freezing</div>
                     <div class="column2">EMF 5</div>
-                    <div class="column2">Freezing Temps</div>
+                    <div class="column4">Blank</div>
                     <div class="column2">Fingerprints</div>
                 </div>
             </button>
@@ -208,9 +217,10 @@
             <button  id="sha" class="tablinks" onclick="openCity(event, 'shade')">
                 <div class="row" > 
                     <div class="column2"><strong>Shade</strong></div>
+                    <div class="column2">Freezing</div>
                     <div class="column2">EMF 5</div>
-                    <div class="column2">Freezing Temps</div>
                     <div class="column2">Writing</div>
+                    <div class="column4">Blank</div>
                 </div>
             </button>
 
@@ -218,9 +228,10 @@
             <button id="oni" class="tablinks" onclick="openCity(event, 'oni2')">
                 <div class="row" > 
                     <div class="column2"><strong>Oni</strong></div>
+                    <div class="column2">Freezing</div>
                     <div class="column2">EMF 5</div>
-                    <div class="column2">Freezing Temps</div>
                     <div class="column2">D.O.T.S</div>
+                    <div class="column4">Blank</div>
                 </div>
             </button>
 
@@ -228,9 +239,10 @@
             <button id="rev" class="tablinks" onclick="openCity(event, 'revenant')">
                 <div class="row" > 
                     <div class="column2"><strong>Revenant</strong></div>
+                    <div class="column2">Freezing</div>
                     <div class="column2">Orbs</div>
-                    <div class="column2">Freezing Temps</div>
                     <div class="column2">Writing</div>
+                    <div class="column4">Blank</div>
                 </div>
             </button>
 
@@ -239,8 +251,9 @@
                 <div class="row" > 
                     <div class="column2"><strong>Poltergeist</strong></div>
                     <div class="column2">Spirit Box</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column4">Blank</div>
                     <div class="column2">Writing</div>
+                    <div class="column2">Fingerprints</div>
                 </div>
             </button>
 
@@ -248,9 +261,10 @@
             <button id="spi" class="tablinks" onclick="openCity(event, 'spirit')">
                 <div class="row" > 
                     <div class="column2"><strong>Spirit</strong></div>
-                    <div class="column2">EMF 5</div>
                     <div class="column2">Spirit Box</div>
+                    <div class="column2">EMF 5</div>
                     <div class="column2">Writing</div>
+                    <div class="column4">Blank</div>
                 </div>
             </button>
 
@@ -258,8 +272,9 @@
             <button id="han" class="tablinks" onclick="openCity(event, 'hantu')">
                 <div class="row" > 
                     <div class="column2"><strong>Hantu</strong></div>
+                    <div class="column2">Freezing</div>
                     <div class="column2">Orbs</div>
-                    <div class="column2">Freezing Temps</div>
+                    <div class="column4">Blank</div>
                     <div class="column2">Fingerprints</div>
                 </div>
             </button>
@@ -268,9 +283,10 @@
             <button id="yok" class="tablinks" onclick="openCity(event, 'yokai')">
                 <div class="row" > 
                     <div class="column2"><strong>Yokai</strong></div>
+                    <div class="column2">Spirit Box</div>
                     <div class="column2">Orbs</div>
-                    <div class="column2">Freezing Temps</div>
                     <div class="column2">D.O.T.S</div>
+                    <div class="column4">Blank</div>
                 </div>
             </button>
 
@@ -278,9 +294,10 @@
             <button id="gor" class="tablinks" onclick="openCity(event, 'goryo')">
                 <div class="row" > 
                     <div class="column2"><strong>Goryo</strong></div>
+                    <div class="column4">Blank</div>
                     <div class="column2">EMF 5</div>
-                    <div class="column2">Fingerprints</div>
                     <div class="column2">D.O.T.S</div>
+                    <div class="column2">Fingerprints</div>
                 </div>
             </button>
 
@@ -288,9 +305,10 @@
             <button id="myl" class="tablinks" onclick="openCity(event, 'myling')">
                 <div class="row" > 
                     <div class="column2"><strong>Myling</strong></div>
+                    <div class="column4">Blank</div>
                     <div class="column2">EMF 5</div>
-                    <div class="column2">Fingerprints</div>
                     <div class="column2">Writing</div>
+                    <div class="column2">Fingerprints</div>
                 </div>
             </button>
 
@@ -298,6 +316,7 @@
         </div>
         
         <div id="phantom" class="tabcontent" style="display:none">
+            <!-- <button class="button close" onclick="closeCity(event, 'phantom')">X</button> -->
           <h3>Phantom</h3>
           <h4>Danger Rank - B</h5>
             <br>
