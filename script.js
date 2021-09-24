@@ -47,6 +47,7 @@ var cancelColor = "#323342"
 
 
 
+
 let phantom = {
     name: "phantom",
     visible: true,
@@ -206,10 +207,10 @@ let hantu = {
 let yokai = {
     name: "yokai",
     visible: true,
-    frz: true,
+    frz: false,
     emf: false,
     orb: true,
-    box: false,
+    box: true,
     write: false,
     print: false,
     dot: true,
@@ -539,6 +540,43 @@ function check() {
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
+
+    //if its open then close it
+    if(document.getElementById(cityName).style.display == "block") {
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+    
+        tablinks = document.getElementsByClassName("tablinks");
+    
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+    } else {
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+    
+        tablinks = document.getElementsByClassName("tablinks");
+    
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+    
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+  
+    
+}
+
+
+
+
+
+function closeCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
   
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
@@ -547,12 +585,9 @@ function openCity(evt, cityName) {
     tablinks = document.getElementsByClassName("tablinks");
 
     for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].className = tablinks[i].className.replace("none", "");
     }
 
     document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+    evt.currentTarget.className += "none";
 }
-
-
-
