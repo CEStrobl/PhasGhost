@@ -15,7 +15,7 @@
 align-items: center;
 
 align-content: center;">
-    Phasmophobia Ghost Classifier v1.8.1 
+    Phasmophobia Ghost Classifier v1.8.2 
     <a href="index.html"><button style="margin-left: 30px;" class="button emoji active" >Icons</button></a>
 </h1>
  
@@ -149,9 +149,9 @@ align-content: center;">
             <button id="spi" class="tablinks" onclick="openCity(event, 'spirit')">
                 <div class="row" > 
                     <div class="column2"><strong>Spirit</strong></div>
-                    <div class="column2">📟Spirit Box</div>
-                    <div class="column2">🚥EMF 5</div>
-                    <div class="column2">📖Writing</div>
+                    <div class="column2" id="spibox">📟Spirit Box</div>
+                    <div class="column2" id="spiemf">🚥EMF 5</div>
+                    <div class="column2" id="spiwrite">📖Writing</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -160,9 +160,9 @@ align-content: center;">
             <button id="wra" class="tablinks" onclick="openCity(event, 'wraith')">
                 <div class="row" > 
                     <div class="column2"><strong>Wraith</strong></div>
-                    <div class="column2">📟Spirit Box</div>
-                    <div class="column2">🚥EMF 5</div>
-                    <div class="column2">❇️D.O.T.S</div>
+                    <div class="column2" id="wrabox">📟Spirit Box</div>
+                    <div class="column2" id="wraemf">🚥EMF 5</div>
+                    <div class="column2" id="wradot">❇️D.O.T.S</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -171,10 +171,10 @@ align-content: center;">
             <button id="pha" class="tablinks" onclick="openCity(event, 'phantom')">
                 <div class="row" > 
                     <div class="column2"><strong>Phantom</strong></div>
-                    <div class="column2">📟Spirit Box</div>
+                    <div class="column2" id="phabox">📟Spirit Box</div>
                     <div class="column4">Blank</div>
-                    <div class="column2">❇️D.O.T.S</div>
-                    <div class="column2">🖐️Fingerprints</div>
+                    <div class="column2" id="phadot">❇️D.O.T.S</div>
+                    <div class="column2" id="phaprint">🖐️Fingerprints</div>
                 </div>
             </button>
 
@@ -182,10 +182,10 @@ align-content: center;">
             <button id="pol" class="tablinks" onclick="openCity(event, 'poltergeist')">
                 <div class="row" > 
                     <div class="column2"><strong>Poltergeist</strong></div>
-                    <div class="column2">📟Spirit Box</div>
+                    <div class="column2" id="polbox">📟Spirit Box</div>
                     <div class="column4">Blank</div>
-                    <div class="column2">📖Writing</div>
-                    <div class="column2">🖐️Fingerprints</div>
+                    <div class="column2" id="polwrite">📖Writing</div>
+                    <div class="column2" id="polprint">🖐️Fingerprints</div>
                 </div>
             </button>
 
@@ -194,9 +194,9 @@ align-content: center;">
                 <div class="row" > 
                     <div class="column2"><strong>Banshee</strong></div>
                     <div class="column4">Blank</div>
-                    <div class="column2">✨Orbs</div>
-                    <div class="column2">❇️D.O.T.S</div>
-                    <div class="column2">🖐️Fingerprints</div>
+                    <div class="column2" id="banorb">✨Orbs</div>
+                    <div class="column2" id="bandot">❇️D.O.T.S</div>
+                    <div class="column2" id="banprint">🖐️Fingerprints</div>
                 </div>
             </button>
 
@@ -204,10 +204,10 @@ align-content: center;">
             <button id="jin" class="tablinks" onclick="openCity(event, 'jinn')">
                 <div class="row" > 
                     <div class="column2"><strong>Jinn</strong></div>
-                    <div class="column2">❄️Freezing</div>
-                    <div class="column2">🚥EMF 5</div>
+                    <div class="column2" id="jinfrz">❄️Freezing</div>
+                    <div class="column2" id="jinemf">🚥EMF 5</div>
                     <div class="column4">Blank</div>
-                    <div class="column2">🖐️Fingerprints</div>
+                    <div class="column2" id="jinprint">🖐️Fingerprints</div>
                 </div>
             </button>
 
@@ -215,9 +215,9 @@ align-content: center;">
             <button id="mar" class="tablinks" onclick="openCity(event, 'mare')">
                 <div class="row" > 
                     <div class="column2"><strong>Mare</strong></div>
-                    <div class="column2">📟Spirit Box</div>
-                    <div class="column2">✨Orbs</div>
-                    <div class="column2">📖Writing</div>
+                    <div class="column2"  id="marbox">📟Spirit Box</div>
+                    <div class="column2"   id="marorb">✨Orbs</div>
+                    <div class="column2"  id="marwrite">📖Writing</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -226,9 +226,9 @@ align-content: center;">
             <button id="rev" class="tablinks" onclick="openCity(event, 'revenant')">
                 <div class="row" > 
                     <div class="column2"><strong>Revenant</strong></div>
-                    <div class="column2">❄️Freezing</div>
-                    <div class="column2">✨Orbs</div>
-                    <div class="column2">📖Writing</div>
+                    <div class="column2"  id="revfrz">❄️Freezing</div>
+                    <div class="column2"  id="revorb">✨Orbs</div>
+                    <div class="column2"  id="revwrite">📖Writing</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -237,9 +237,9 @@ align-content: center;">
             <button  id="sha" class="tablinks" onclick="openCity(event, 'shade')">
                 <div class="row" > 
                     <div class="column2"><strong>Shade</strong></div>
-                    <div class="column2">❄️Freezing</div>
-                    <div class="column2">🚥EMF 5</div>
-                    <div class="column2">📖Writing</div>
+                    <div class="column2" id="shafrz">❄️Freezing</div>
+                    <div class="column2" id="shaemf">🚥EMF 5</div>
+                    <div class="column2" id="shawrite">📖Writing</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -248,10 +248,10 @@ align-content: center;">
             <button id="dem" class="tablinks" onclick="openCity(event, 'demon')">
                 <div class="row" > 
                     <div class="column2"><strong>Demon</strong></div>
-                    <div class="column2">❄️Freezing</div>
+                    <div class="column2" id="demfrz">❄️Freezing</div>
                     <div class="column4">Blank</div>
-                    <div class="column2">📖Writing</div>
-                    <div class="column2">🖐️Fingerprints</div>
+                    <div class="column2" id="demwrite">📖Writing</div>
+                    <div class="column2" id="demprint">🖐️Fingerprints</div>
                 </div>
             </button>
 
@@ -259,9 +259,9 @@ align-content: center;">
             <button  id="yur" class="tablinks" onclick="openCity(event, 'yurei')">
                 <div class="row" > 
                     <div class="column2"><strong>Yurei</strong></div>
-                    <div class="column2">❄️Freezing</div>
-                    <div class="column2">✨Orbs</div>
-                    <div class="column2">❇️D.O.T.S</div>
+                    <div class="column2" id="yurfrz">❄️Freezing</div>
+                    <div class="column2" id="yurorb">✨Orbs</div>
+                    <div class="column2" id="yurdot">❇️D.O.T.S</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -270,9 +270,9 @@ align-content: center;">
             <button id="oni" class="tablinks" onclick="openCity(event, 'oni2')">
                 <div class="row" > 
                     <div class="column2"><strong>Oni</strong></div>
-                    <div class="column2">❄️Freezing</div>
-                    <div class="column2">🚥EMF 5</div>
-                    <div class="column2">❇️D.O.T.S</div>
+                    <div class="column2" id="onifrz">❄️Freezing</div>
+                    <div class="column2" id="oniemf">🚥EMF 5</div>
+                    <div class="column2" id="onidot">❇️D.O.T.S</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -281,9 +281,9 @@ align-content: center;">
             <button id="yok" class="tablinks" onclick="openCity(event, 'yokai')">
                 <div class="row" > 
                     <div class="column2"><strong>Yokai</strong></div>
-                    <div class="column2">📟Spirit Box</div>
-                    <div class="column2">✨Orbs</div>
-                    <div class="column2">❇️D.O.T.S</div>
+                    <div class="column2" id="yokbox">📟Spirit Box</div>
+                    <div class="column2" id="yokorb">✨Orbs</div>
+                    <div class="column2" id="yokdot">❇️D.O.T.S</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -292,10 +292,10 @@ align-content: center;">
             <button id="han" class="tablinks" onclick="openCity(event, 'hantu')">
                 <div class="row" > 
                     <div class="column2"><strong>Hantu</strong></div>
-                    <div class="column2">❄️Freezing</div>
-                    <div class="column2">✨Orbs</div>
+                    <div class="column2" id="hanfrz">❄️Freezing</div>
+                    <div class="column2" id="hanorb">✨Orbs</div>
                     <div class="column4">Blank</div>
-                    <div class="column2">🖐️Fingerprints</div>
+                    <div class="column2" id="hanprint">🖐️Fingerprints</div>
                 </div>
             </button>
             
@@ -304,9 +304,9 @@ align-content: center;">
                 <div class="row" > 
                     <div class="column2"><strong>Goryo</strong></div>
                     <div class="column4">Blank</div>
-                    <div class="column2">🚥EMF 5</div>
-                    <div class="column2">❇️D.O.T.S</div>
-                    <div class="column2">🖐️Fingerprints</div>
+                    <div class="column2" id="goremf">🚥EMF 5</div>
+                    <div class="column2" id="gordot">❇️D.O.T.S</div>
+                    <div class="column2" id="gorprint">🖐️Fingerprints</div>
                 </div>
             </button>
 
@@ -315,9 +315,9 @@ align-content: center;">
                 <div class="row" > 
                     <div class="column2"><strong>Myling</strong></div>
                     <div class="column4">Blank</div>
-                    <div class="column2">🚥EMF 5</div>
-                    <div class="column2">📖Writing</div>
-                    <div class="column2">🖐️Fingerprints</div>
+                    <div class="column2" id="mylemf">🚥EMF 5</div>
+                    <div class="column2" id="mylwrite">📖Writing</div>
+                    <div class="column2" id="mylprint">🖐️Fingerprints</div>
                 </div>
             </button>
 
