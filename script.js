@@ -257,7 +257,22 @@ let PerVarLibrary =
     frzP, emfP, orbP, boxP, writeP, printP, dotP
 ]
 
+let CheckBoxLibrary = 
+[
+    frzT, frzF, emfT, emfF, orbT, orbF, boxT, boxF, writeT, writeF, printT, printF, dotT, dotF
+]
 
+
+
+function pageReset() {
+
+    for(i = 0; i < CheckBoxLibrary.length; i++) {
+
+        CheckBoxLibrary[i].checked = false
+
+    }
+
+}
 
 
 
