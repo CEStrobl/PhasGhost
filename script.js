@@ -262,9 +262,34 @@ let CheckBoxLibrary =
     frzT, frzF, emfT, emfF, orbT, orbF, boxT, boxF, writeT, writeF, printT, printF, dotT, dotF
 ]
 
+let EvidenceLibrary =
+[
+    "frz", "emf", "orb", "box", "write", "print", "dot"
+]
+
+let GhostVarLibrary = 
+[
+    "pha", "ban", "mar", "yur", "dem", "wra", "jin", "sha", "oni", "rev", "pol", "spi", "han", "yok", "gor", "myl"
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function pageReset() {
+
+    reset()
+    visibility()
 
     for(i = 0; i < CheckBoxLibrary.length; i++) {
 
@@ -282,18 +307,66 @@ function visibility(){
 
         if (GhostLibrary[i].visible == false) {
 
+            
+
             VarLibrary[i].style.color = cancelColor
+
+            emojiRemove(i)
 
         }
 
         if (GhostLibrary[i].visible == true) {
 
             VarLibrary[i].style.color = defaultColor
+
+            emojiBringBack(i)
             
         }
 
     }
 
+}
+
+function emojiRemove(g) {
+    
+    for(e = 0; e < EvidenceLibrary.length; e++) {
+
+        if(document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]) != null) {
+
+            if(EvidenceLibrary[e] == "frz") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Freezing"}
+            if(EvidenceLibrary[e] == "emf") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "EMF 5"}
+            if(EvidenceLibrary[e] == "orb") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Orbs"}
+            if(EvidenceLibrary[e] == "box") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Spirit Box"}
+            if(EvidenceLibrary[e] == "write") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Writing"}
+            if(EvidenceLibrary[e] == "print") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Fingerprints"}
+            if(EvidenceLibrary[e] == "dot") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "D.O.T.S."}
+
+
+        }
+
+    }
+    
+}
+
+function emojiBringBack(g) {
+    
+    for(e = 0; e < EvidenceLibrary.length; e++) {
+
+        if(document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]) != null) {
+
+            if(EvidenceLibrary[e] == "frz") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "❄️Freezing"}
+            if(EvidenceLibrary[e] == "emf") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "🚥EMF 5"}
+            if(EvidenceLibrary[e] == "orb") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "✨Orbs"}
+            if(EvidenceLibrary[e] == "box") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "📟Spirit Box"}
+            if(EvidenceLibrary[e] == "write") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "📖Writing"}
+            if(EvidenceLibrary[e] == "print") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "🖐️Fingerprints"}
+            if(EvidenceLibrary[e] == "dot") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "❇️D.O.T.S."}
+
+
+        }
+
+    }
+    
 }
 
 
