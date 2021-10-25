@@ -9,13 +9,21 @@
 </head>
 <body>
 
-    <h1 style="display: flex;
-    align-items: center;
-    
-    align-content: center;">
-        Phasmophobia Ghost Classifier v1.8.2 
-        <a href="indexEmoji.html"><button style="margin-left: 30px;" class="button emoji">Icons</button></a>
-    </h1>
+
+
+<h1 style="display: flex;
+align-items: center;
+
+align-content: center;">
+    Phasmophobia Ghost Classifier v1.9.0 
+    <a href="indexEmoji.html"><button style="margin-left: 30px;" class="button emoji" >Icons</button></a>
+    <!-- <a><button style="margin-left: 30px;" class="button sort">Sort</button></a> -->
+</h1>
+ 
+
+
+
+
 
 
 
@@ -142,9 +150,9 @@
             <button id="spi" class="tablinks" onclick="openCity(event, 'spirit')">
                 <div class="row" > 
                     <div class="column2"><strong>Spirit</strong></div>
-                    <div class="column2">Spirit Box</div>
-                    <div class="column2">EMF 5</div>
-                    <div class="column2">Writing</div>
+                    <div class="column2" id="spibox">Spirit Box</div>
+                    <div class="column2" id="spiemf">EMF 5</div>
+                    <div class="column2" id="spiwrite">Writing</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -153,9 +161,9 @@
             <button id="wra" class="tablinks" onclick="openCity(event, 'wraith')">
                 <div class="row" > 
                     <div class="column2"><strong>Wraith</strong></div>
-                    <div class="column2">Spirit Box</div>
-                    <div class="column2">EMF 5</div>
-                    <div class="column2">D.O.T.S</div>
+                    <div class="column2" id="wrabox">Spirit Box</div>
+                    <div class="column2" id="wraemf">EMF 5</div>
+                    <div class="column2" id="wradot">D.O.T.S</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -164,10 +172,10 @@
             <button id="pha" class="tablinks" onclick="openCity(event, 'phantom')">
                 <div class="row" > 
                     <div class="column2"><strong>Phantom</strong></div>
-                    <div class="column2">Spirit Box</div>
+                    <div class="column2" id="phabox">Spirit Box</div>
                     <div class="column4">Blank</div>
-                    <div class="column2">D.O.T.S</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column2" id="phadot">D.O.T.S</div>
+                    <div class="column2" id="phaprint">Fingerprints</div>
                 </div>
             </button>
 
@@ -175,10 +183,10 @@
             <button id="pol" class="tablinks" onclick="openCity(event, 'poltergeist')">
                 <div class="row" > 
                     <div class="column2"><strong>Poltergeist</strong></div>
-                    <div class="column2">Spirit Box</div>
+                    <div class="column2" id="polbox">Spirit Box</div>
                     <div class="column4">Blank</div>
-                    <div class="column2">Writing</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column2" id="polwrite">Writing</div>
+                    <div class="column2" id="polprint">Fingerprints</div>
                 </div>
             </button>
 
@@ -187,9 +195,9 @@
                 <div class="row" > 
                     <div class="column2"><strong>Banshee</strong></div>
                     <div class="column4">Blank</div>
-                    <div class="column2">Orbs</div>
-                    <div class="column2">D.O.T.S</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column2" id="banorb">Orbs</div>
+                    <div class="column2" id="bandot">D.O.T.S</div>
+                    <div class="column2" id="banprint">Fingerprints</div>
                 </div>
             </button>
 
@@ -197,10 +205,10 @@
             <button id="jin" class="tablinks" onclick="openCity(event, 'jinn')">
                 <div class="row" > 
                     <div class="column2"><strong>Jinn</strong></div>
-                    <div class="column2">Freezing</div>
-                    <div class="column2">EMF 5</div>
+                    <div class="column2" id="jinfrz">Freezing</div>
+                    <div class="column2" id="jinemf">EMF 5</div>
                     <div class="column4">Blank</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column2" id="jinprint">Fingerprints</div>
                 </div>
             </button>
 
@@ -208,9 +216,9 @@
             <button id="mar" class="tablinks" onclick="openCity(event, 'mare')">
                 <div class="row" > 
                     <div class="column2"><strong>Mare</strong></div>
-                    <div class="column2">Spirit Box</div>
-                    <div class="column2">Orbs</div>
-                    <div class="column2">Writing</div>
+                    <div class="column2"  id="marbox">Spirit Box</div>
+                    <div class="column2"   id="marorb">Orbs</div>
+                    <div class="column2"  id="marwrite">Writing</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -219,9 +227,9 @@
             <button id="rev" class="tablinks" onclick="openCity(event, 'revenant')">
                 <div class="row" > 
                     <div class="column2"><strong>Revenant</strong></div>
-                    <div class="column2">Freezing</div>
-                    <div class="column2">Orbs</div>
-                    <div class="column2">Writing</div>
+                    <div class="column2"  id="revfrz">Freezing</div>
+                    <div class="column2"  id="revorb">Orbs</div>
+                    <div class="column2"  id="revwrite">Writing</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -230,9 +238,9 @@
             <button  id="sha" class="tablinks" onclick="openCity(event, 'shade')">
                 <div class="row" > 
                     <div class="column2"><strong>Shade</strong></div>
-                    <div class="column2">Freezing</div>
-                    <div class="column2">EMF 5</div>
-                    <div class="column2">Writing</div>
+                    <div class="column2" id="shafrz">Freezing</div>
+                    <div class="column2" id="shaemf">EMF 5</div>
+                    <div class="column2" id="shawrite">Writing</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -241,10 +249,10 @@
             <button id="dem" class="tablinks" onclick="openCity(event, 'demon')">
                 <div class="row" > 
                     <div class="column2"><strong>Demon</strong></div>
-                    <div class="column2">Freezing</div>
+                    <div class="column2" id="demfrz">Freezing</div>
                     <div class="column4">Blank</div>
-                    <div class="column2">Writing</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column2" id="demwrite">Writing</div>
+                    <div class="column2" id="demprint">Fingerprints</div>
                 </div>
             </button>
 
@@ -252,9 +260,9 @@
             <button  id="yur" class="tablinks" onclick="openCity(event, 'yurei')">
                 <div class="row" > 
                     <div class="column2"><strong>Yurei</strong></div>
-                    <div class="column2">Freezing</div>
-                    <div class="column2">Orbs</div>
-                    <div class="column2">D.O.T.S</div>
+                    <div class="column2" id="yurfrz">Freezing</div>
+                    <div class="column2" id="yurorb">Orbs</div>
+                    <div class="column2" id="yurdot">D.O.T.S</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -263,9 +271,9 @@
             <button id="oni" class="tablinks" onclick="openCity(event, 'oni2')">
                 <div class="row" > 
                     <div class="column2"><strong>Oni</strong></div>
-                    <div class="column2">Freezing</div>
-                    <div class="column2">EMF 5</div>
-                    <div class="column2">D.O.T.S</div>
+                    <div class="column2" id="onifrz">Freezing</div>
+                    <div class="column2" id="oniemf">EMF 5</div>
+                    <div class="column2" id="onidot">D.O.T.S</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -274,9 +282,9 @@
             <button id="yok" class="tablinks" onclick="openCity(event, 'yokai')">
                 <div class="row" > 
                     <div class="column2"><strong>Yokai</strong></div>
-                    <div class="column2">Spirit Box</div>
-                    <div class="column2">Orbs</div>
-                    <div class="column2">D.O.T.S</div>
+                    <div class="column2" id="yokbox">Spirit Box</div>
+                    <div class="column2" id="yokorb">Orbs</div>
+                    <div class="column2" id="yokdot">D.O.T.S</div>
                     <div class="column4">Blank</div>
                 </div>
             </button>
@@ -285,9 +293,20 @@
             <button id="han" class="tablinks" onclick="openCity(event, 'hantu')">
                 <div class="row" > 
                     <div class="column2"><strong>Hantu</strong></div>
-                    <div class="column2">Freezing</div>
-                    <div class="column2">Orbs</div>
+                    <div class="column2" id="hanfrz">Freezing</div>
+                    <div class="column2" id="hanorb">Orbs</div>
                     <div class="column4">Blank</div>
+                    <div class="column2" id="hanprint">Fingerprints</div>
+                </div>
+            </button>
+
+            <!-- Myling -->
+            <button id="myl" class="tablinks" onclick="openCity(event, 'myling')">
+                <div class="row"> 
+                    <div class="column2"><strong>Myling</strong></div>
+                    <div class="column4">Blank</div>
+                    <div class="column2">EMF 5</div>
+                    <div class="column2">Writing</div>
                     <div class="column2">Fingerprints</div>
                 </div>
             </button>
@@ -297,22 +316,56 @@
                 <div class="row" > 
                     <div class="column2"><strong>Goryo</strong></div>
                     <div class="column4">Blank</div>
-                    <div class="column2">EMF 5</div>
-                    <div class="column2">D.O.T.S</div>
-                    <div class="column2">Fingerprints</div>
+                    <div class="column2" id="goremf">EMF 5</div>
+                    <div class="column2" id="gordot">D.O.T.S</div>
+                    <div class="column2" id="gorprint">Fingerprints</div>
                 </div>
             </button>
 
-            <!-- Myling -->
-            <button id="myl" class="tablinks" onclick="openCity(event, 'myling')">
+            <!-- Onryo -->
+            <button id="onr" class="tablinks" onclick="openCity(event, 'onryo')">
                 <div class="row" > 
-                    <div class="column2"><strong>Myling</strong></div>
+                    <div class="column2"><strong>Onryo</strong></div>
+                    <div class="column2" id="onrfrz">Freezing</div>
+                    <div class="column2" id="onrorb">Orbs</div>
+                    <div class="column2" id="onrbox">Spirit Box</div>
                     <div class="column4">Blank</div>
-                    <div class="column2">EMF 5</div>
-                    <div class="column2">Writing</div>
-                    <div class="column2">Fingerprints</div>
                 </div>
             </button>
+
+            <!-- Twins -->
+            <button id="twi" class="tablinks" onclick="openCity(event, 'twins')">
+                <div class="row" > 
+                    <div class="column2"><strong>The Twins</strong></div>
+                    <div class="column2" id="twifrz">Freezing</div>
+                    <div class="column2" id="twiemf">EMF 5</div>
+                    <div class="column2" id="twibox">Spirit Box</div>
+                    <div class="column4">Blank</div>
+                </div>
+            </button>
+
+            <!-- Raiju -->
+            <button id="rai" class="tablinks" onclick="openCity(event, 'raiju')">
+                <div class="row" > 
+                    <div class="column2"><strong>Raiju</strong></div>
+                    <div class="column2" id="raiemf">EMF 5</div>
+                    <div class="column2" id="raiorb">Orbs</div>
+                    <div class="column2" id="raidot">D.O.T.S</div>
+                    <div class="column4">Blank</div>
+                </div>
+            </button>
+
+            <!-- Obake -->
+            <button id="oba" class="tablinks" onclick="openCity(event, 'obake')">
+                <div class="row" > 
+                    <div class="column2"><strong>Obake</strong></div>
+                    <div class="column2" id="obaemf">EMF 5</div>
+                    <div class="column2" id="obaorb">Orbs</div>
+                    <div class="column4">Blank</div>
+                    <div class="column2" id="obaprint">Fingerprints</div>
+                </div>
+            </button>
+
 
   
         </div>
@@ -323,7 +376,8 @@
 
         <div id="spirit" class="tabcontent" style="display:none">
             <h3>Spirit</h3>
-            <h4>Danger Rank - D</h5>
+            <h4>Box - EMF - Writing</h4>
+            
                 <br>
             <p>
                 A Spirit is the most common Ghost you will come across however it is still very powerful and dangerous. They are usually discovered at one of their hunting grounds after an unexplained death.
@@ -336,7 +390,7 @@
 
         <div id="wraith" class="tabcontent" style="display:none">
             <h3>Wraith</h3>
-            <h4>Danger Rank - C</h5>
+            <h4>Box - EMF - DOTS</h4>
                 <br>
             <p>
                 A Wraith is one of the most dangerous Ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.
@@ -344,13 +398,15 @@
                 <strong>Strengths:</strong> Wraiths almost never touch the ground, but this does not apply to the ghost model. Because of this, footprint sounds from a wraith will be rare to non-existent, and they can travel directly through walls doors without having to open them.
                 <br><br>
                 <strong>Weaknesses:</strong> Wraiths have a toxic reaction to Salt. If a Wraith comes into contact with a pile of salt, it will immediately cease attacking.
+                <br><br><br>
+                <strong>Tip:</strong> Wraiths do not touch the ground so if you see footprints with the UV light, then it is not a wraith.
             </p>
         </div>
 
         <div id="phantom" class="tabcontent" style="display:none">
             <!-- <button class="button close" onclick="closeCity(event, 'phantom')">X</button> -->
           <h3>Phantom</h3>
-          <h4>Danger Rank - B</h5>
+          <h4>Box - DOTS - Prints</h4>
             <br>
             <p>
                 A Phantom is a Ghost that can possess the living, most commonly summoned by a Ouija Board. It also induces fear into those around it.
@@ -363,7 +419,7 @@
 
         <div id="poltergeist" class="tabcontent" style="display:none">
             <h3>Poltergeist</h3>
-            <h4>Danger Rank - C</h5>
+            <h4>Box - Writing - Prints</h4>
                 <br>
             <p>
                 One of the most famous Ghosts, a Poltergeist, also known as a noisy ghost can manipulate objects around it to spread fear into it's victims.
@@ -376,7 +432,7 @@
 
         <div id="banshee" class="tabcontent" style="display:none">
             <h3>Banshee</h3>
-            <h4>Danger Rank - B</h5>
+            <h4>Orbs - DOTS - Prints</h4>
                 <br>
               <p>
                 A Banshee is a natural hunter and will attack anything. It has been known to stalk its prey one at a time until making its kill.
@@ -389,7 +445,7 @@
 
         <div id="jinn" class="tabcontent" style="display:none">
             <h3>Jinn</h3>
-            <h4>Danger Rank - A</h5>
+            <h4>Freezing - EMF - Prints</h4>
                 <br>
             <p>
                 A Jinn is a territorial Ghost that will attack when threatened. It also has been known to travel at significant speed.
@@ -402,7 +458,7 @@
 
         <div id="mare" class="tabcontent" style="display:none">
             <h3>Mare</h3>
-            <h4>Danger Rank - B</h5>
+            <h4>Box - Orbs - Writing</h4>
                 <br>
             <p>
                 A Mare is the source of all nightmares, making it most powerful in the dark.
@@ -410,12 +466,14 @@
                 <strong>Strengths:</strong> Increased chance to attack in the dark. As such, it will do what it can to achieve this, such as turning off lights and tripping the fuse box.
                 <br><br>
                 <strong>Weaknesses:</strong> Turning the lights on will lower its chance to attack.
+                <br><br><br>
+                <strong>Tip:</strong> Mares will never turn on the lights so if the ghost turned the lights on, then it is not a Mare. 
             </p>
         </div>
 
         <div id="revenant" class="tabcontent" style="display:none">
             <h3>Revenant</h3>
-            <h4>Danger Rank - S</h5>
+            <h4>Freezing - Orbs - Writing</h4>
                 <br>
             <p>
                 A Revenant is a slow but violent Ghost that will attack indiscriminantly. It has been rumored to travel at a significantly high speed when hunting.
@@ -428,7 +486,7 @@
 
         <div id="shade" class="tabcontent" style="display:none">
             <h3>Shade</h3>
-            <h4>Danger Rank - D</h5>
+            <h4>Freezing - EMF - Writing</h4>
                 <br>
             <p>
                 A Shade is known to be a Shy Ghost. There is evidence that a Shade will stop all paranormal activity if there are multiple people nearby.
@@ -441,7 +499,7 @@
 
         <div id="demon" class="tabcontent" style="display:none">
             <h3>Demon</h3>
-            <h4>Danger Rank - A</h5>
+            <h4>Freezing - Writing - Prints</h4>
                 <br>
             <p>
                 A Demon is one of the worst Ghosts you can encounter. It has been known to attack without a reason.
@@ -454,7 +512,7 @@
 
         <div id="yurei" class="tabcontent" style="display:none">
             <h3>Yurei</h3>
-            <h4>Danger Rank - C</h5>
+            <h4>Freezing - Orbs - DOTS</h4>
                 <br>
             <p>
                 A Yurei is a Ghost that has returned to the physical world, usually for the purpose of revenge or hatred.
@@ -467,7 +525,7 @@
         
         <div id="oni2" class="tabcontent" style="display:none">
             <h3>Oni</h3>
-            <h4>Danger Rank - C</h5>
+            <h4>Freezing - EMF - DOTS</h4>
                 <br>
             <p>
                 Oni's chare traits with Demons, and possess extreme strength. There have been rumors that they become more active around their prey.
@@ -480,7 +538,7 @@
 
         <div id="yokai" class="tabcontent" style="display:none">
             <h3>Yokai</h3>
-            <h4>Danger Rank - A</h5>
+            <h4>Bos - Orbs - DOTS</h4>
                 <br>
             <p>
                 Yokai are common ghosts that are attracted to human voices. They can usually be found haunting family homes.
@@ -493,7 +551,7 @@
 
         <div id="hantu" class="tabcontent" style="display:none">
             <h3>Hantu</h3>
-            <h4>Danger Rank - C</h5>
+            <h4>Freezing - Orbs - Prints</h4>
                 <br>
             <p>
                 A Hantu is a rare ghost that can be found in hotter climates. They are known to attack often during cold weather.
@@ -506,7 +564,7 @@
 
         <div id="goryo" class="tabcontent" style="display:none">
             <h3>Goryo</h3>
-            <h4>Danger Rank - ?</h5>
+            <h4>EMF - DOTS - Prints</h4>
                 <br>
             <p>
                 When a Goryo passes through a DOTS projector, using a video camera is the only way to see it.
@@ -519,17 +577,75 @@
 
         <div id="myling" class="tabcontent" style="display:none">
             <h3>Myling</h3>
-            <h4>Danger Rank - ?</h5>
+            <h4>EMF - Writing - Prints</h4>
                 <br>
             <p>
                 A Myling is a very vocal and active ghost. They are rumored to be quiet when hunting their prey.
                 <br><br>
-                <strong>Strengths:</strong> A Myling is known to be quieter when hunting.
+                <strong>Strengths:</strong> A Myling is known to be quieter when hunting. (Footsteps are quite, not its voice)
                 <br><br>
                 <strong>Weaknesses:</strong> Mylings more frequently make paranormal sounds.
+                <br><br><br>
+                <strong>Tip:</strong> The Myling has quite footsteps so if you hide during a hunt with a flashlight turned on, and you hear footsteps before the flashlight flickers, then it is not a Myling.
             </p>
         </div>
 
+        <div id="onryo" class="tabcontent" style="display:none">
+            <h3>Onryo</h3>
+            <h4>Freezing - Box - Orbs</h4>
+                <br>
+            <p>
+                The Onryo is often referred to as "The Wrathful Spirit". It steals Souls from dying victims' bodies to seek revenge. This ghost has been known to fear any form of fire, and will do anything to be far from it.
+                <br><br>
+                <strong>Strengths:</strong> Extinguishing a flame can cause an Onryo to attack. 
+                <br><br>
+                <strong>Weaknesses:</strong> When threatened, this ghost will be less likely to hunt.
+                <br><br><br>
+                
+            </p>
+        </div>
+
+        <div id="twins" class="tabcontent" style="display:none">
+            <h3>The Twins</h3>
+            <h4>Freezing - Box - EMF</h4>
+                <br>
+            <p>
+                These ghosts have been reported to mimic each other's actions. They alternate their attacks to confuse their prey. 
+                <br><br>
+                <strong>Strengths:</strong> Either twin can be angered and initiate an attack on their prey.
+                <br><br>
+                <strong>Weaknesses:</strong> The twins will often interact with the environment at the same time.
+                <br><br><br>
+                
+            </p>
+        </div>
+
+        <div id="raiju" class="tabcontent" style="display:none">
+            <h3>Raiju</h3>
+            <h4>Orbs - EMF - DOTS</h4>
+                <br>
+            <p>
+                A Raiju is a demon that thrives on electrical current. While generally calm, they can become agitated when overwhelmed with power.
+                <br><br>
+                <strong>Strengths:</strong> A Raiju can siphon power from nearby electrical devices, making it move faster.
+                <br><br>
+                <strong>Weaknesses:</strong> Raiju are constantly disrupting electrical equipment making it easier to track when attacking.
+            </p>
+        </div>
+
+        <div id="obake" class="tabcontent" style="display:none">
+            <h3>Obake</h3>
+            <h4>Orbs - EMF - Prints</h4>
+                <br>
+            <p>
+                Obake are terrifying shape-shapeshifters capable of taking on many forms. They have been seen taking on humanoid shapes to attract their prey.
+                <br><br>
+                <strong>Strengths:</strong> When interacting with the environment, an Obake will rarely leave a trace.
+                <br><br>
+                <strong>Weaknesses:</strong> Sometimes this ghost will shape-shift, leaving behind unique evidence.
+                <br><br><br>
+            </p>
+        </div>
 
 
 
