@@ -435,7 +435,7 @@ function emojiRemove(g) {
             if(EvidenceLibrary[e] == "box") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Spirit Box"};
             if(EvidenceLibrary[e] == "write") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Writing"};
             if(EvidenceLibrary[e] == "print") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Fingerprints"};
-            if(EvidenceLibrary[e] == "dot") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "D.O.T.S."};
+            if(EvidenceLibrary[e] == "dot") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "D.O.T.S"};
 
 
         };
@@ -456,7 +456,7 @@ function emojiBringBack(g) {
             if(EvidenceLibrary[e] == "box") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "📟Spirit Box"};
             if(EvidenceLibrary[e] == "write") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "📖Writing"};
             if(EvidenceLibrary[e] == "print") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "🖐️Fingerprints"};
-            if(EvidenceLibrary[e] == "dot") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "❇️D.O.T.S."};
+            if(EvidenceLibrary[e] == "dot") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "❇️D.O.T.S"};
 
 
         };
