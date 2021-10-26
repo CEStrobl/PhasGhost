@@ -401,8 +401,6 @@ function visibility(){
 
         if (GhostLibrary[i].visible == true) {
 
-            console.log(VarLibrary[i])
-
             VarLibrary[i].style.color = defaultColor;
 
             emojiBringBack(i);
