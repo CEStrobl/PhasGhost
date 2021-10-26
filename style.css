@@ -51,7 +51,7 @@ body {
 }
   
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1345px) {
     .column {
       width: 100%;
     }
@@ -139,8 +139,72 @@ body {
 .emoji:hover {
     background-color: #751e71;
 }
-.active {
+.emojiactive {
     background-color: #751e71;
+}
+
+.sort {
+    color:white;
+    background-color: transparent; 
+    border: 2px solid #1e5575;
+    margin: 0;
+    font-size: 15px;
+}
+  
+.sort:hover {
+    background-color: #1e5575;
+}
+.sortactive {
+    background-color: #1e5575;
+}
+
+
+.gray {
+    color:white;
+    background-color: transparent; 
+    border: 2px solid #646464;
+    margin: 0;
+    font-size: 15px;
+}
+  
+.gray:hover {
+    background-color: #646464;
+}
+
+input {
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+input:after {
+    content: "";
+    background: transparent;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -60px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+input:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
 }
 
 
