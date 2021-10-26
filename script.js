@@ -395,7 +395,7 @@ function visibility(){
 
             VarLibrary[i].style.color = cancelColor;
 
-            emojiRemove(i);
+            //emojiRemove(i);
 
         };
 
@@ -403,7 +403,7 @@ function visibility(){
 
             VarLibrary[i].style.color = defaultColor;
 
-            emojiBringBack(i);
+            //emojiBringBack(i);
             
         };
 
