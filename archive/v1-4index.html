@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phasmophobia Ghost Classifier</title>
+    <link rel="stylesheet" href="v1-4style.css"/>
+    <link rel="icon" href="Phasmophobia-lg.png">
+</head>
+<body>
+
+<h1>Phasmophobia Ghost Classifier v1.4 
+    
+</h1>
+
+
+
+
+<div class="row">
+    <div class="column3">
+        
+
+    <p><h3>Evidence</h3>
+
+        <table id="evidence">
+            <tr>
+                <th><h4>✓</h4></th>
+                <th><h4>X</h4></th>
+                <th> </th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="frzT" onclick="check()"></th>
+                <th><input type="checkbox" id="frzF" onclick="check()"></th>
+                <th>Freezing Temperatures</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="emfT" onclick="check()"></th>
+                <th><input type="checkbox" id="emfF" onclick="check()"></th>
+                <th>EMF 5</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="orbT" onclick="check()"></th>
+                <th><input type="checkbox" id="orbF" onclick="check()"></th>
+                <th>Ghost Orbs</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="boxT" onclick="check()"></th>
+                <th><input type="checkbox" id="boxF" onclick="check()"></th>
+                <th>Spirit Box</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="writeT" onclick="check()"></th>
+                <th><input type="checkbox" id="writeF" onclick="check()"></th>
+                <th>Ghost Writing</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="printT" onclick="check()"></th>
+                <th> <input type="checkbox" id="printF" onclick="check()"></th>
+                <th>Fingerprints</th>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <button class="button red"
+        id="reset"
+        onclick="location.reload()">
+            Reset
+        </button>
+
+        
+
+    </p>
+
+    </div>
+
+
+    <div class="column">
+        <h3>Possible Ghosts</h3>
+
+
+        <!-- Phantom -->
+        <button class="accordion" >
+            <div class="row" > 
+                <div class="column2" id="ph1"><strong>Phantom</strong></div>
+                <div class="column2" id="ph2">Freezing Temps</div>
+                <div class="column2" id="ph3">EMF 5</div>
+                <div class="column2" id="ph4">Ghost Orbs</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                A Phantom is a Ghost that can possess the living, most commonly summoned by a Ouija Board. It also induces fear into those around it.
+                <br><br>
+                <strong>Strengths:</strong> Looking at a Phantom will considerably drop your Sanity. This refers to any visible manifestations of the Phantom, including during a Hunt.
+                <br><br>
+                <strong>Weaknesses:</strong>  Taking a photo of the Phantom will make it temporarily disappear. This, however, will not stop a Hunt.
+            </p>
+
+        </div>
+
+        <!-- Banshee -->
+        <button class="accordion">
+        <div class="row" id="bangroup"> 
+            <div class="column2" id="ba1"><strong>Banshee</strong></div>
+            <div class="column2" id="ba2"></div>Freezing Temps</div>
+            <div class="column2" id="ba3">EMF 5</div>
+            <div class="column2" id="ba4">Finger Prints</div>
+        </div>
+        </button>
+        <div class="panel">
+            <p>
+                A Banshee is a natural hunter and will attack anything. It has been known to stalk its prey one at a time until making its kill.
+                <br><br>
+                <strong>Strengths:</strong> A Banshee will focus on one player at a time until it kills them or the player leaves the building.
+                <br><br>
+                <strong>Weaknesses:</strong> Banshees fear the Crucifix, which boosts the Hunt-stopping range of one from 3 meters to 5 meters against it.
+            </p>
+
+        </div>
+
+
+        
+        <!-- Mare -->
+        <button class="accordion">
+            <div class="row"> 
+                <div class="column2" id="ma1"><strong>Mare</strong></div>
+                <div class="column2" id="ma2">Freezing Temps</div>
+                <div class="column2" id="ma3">Ghost Orbs</div>
+                <div class="column2" id="ma4">Spirit Box</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                A Mare is the source of all nightmares, making it most powerful in the dark.
+                <br><br>
+                <strong>Strengths:</strong> Increased chance to attack in the dark. As such, it will do what it can to achieve this, such as turning off lights and tripping the fuse box.
+                <br><br>
+                <strong>Weaknesses:</strong> Turning the lights on will lower its chance to attack.
+            </p>
+        </div>
+
+
+
+        <!-- Yurei -->
+        <button class="accordion">
+            <div class="row"> 
+                <div class="column2" id="yu1"><strong>Yurei</strong></div>
+                <div class="column2" id="yu2">Freezing Temps</div>
+                <div class="column2" id="yu3">Ghost Orbs</div>
+                <div class="column2" id="yu4">Ghost Writing</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                A Yurei is a Ghost that has returned to the physical world, usually for the purpose of revenge or hatred.
+                <br><br>
+                <strong>Strengths:</strong> Yurei have been known to have a stronger effect on people's Sanity during a manifestation.
+                <br><br>
+                <strong>Weaknesses:</strong> Using Smudge Sticks on the Yurei will cause it to not wander around the location for ~90 seconds.
+            </p>
+
+        </div>
+
+
+
+        <!-- Demon -->
+        <button class="accordion">
+            <div class="row"> 
+                <div class="column2" id="de1"><strong>Demon</strong></div>
+                <div class="column2" id="de2">Freezing Temps</div>
+                <div class="column2" id="de3">Spirit Box</div>
+                <div class="column2" id="de4">Ghost Writing</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                A Demon is one of the worst Ghosts you can encounter. It has been known to attack without a reason.
+                <br><br>
+                <strong>Strengths:</strong> Demons are the most aggressive and enter hunt mode more.
+                <br><br>
+                <strong>Weaknesses:</strong> Asking a Demon successful questions on the Ouija Board won't lower the user's sanity.
+            </p>
+
+        </div>
+
+
+
+        <!-- Wraith -->
+        <button class="accordion">
+            <div class="row"> 
+                <div class="column2" id="wr1"><strong>Wraith</strong></div>
+                <div class="column2" id="wr2">Freezing Temps</div>
+                <div class="column2" id="wr3">Spirit Box</div>
+                <div class="column2" id="wr4">Fingerprints</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                A Wraith is one of the most dangerous Ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.
+                <br><br>
+                <strong>Strengths:</strong> Wraiths almost never touch the ground, but this does not apply to the ghost model. Because of this, footprint sounds from a wraith will be rare to non-existent, and they can travel directly through walls doors without having to open them.
+                <br><br>
+                <strong>Weaknesses:</strong> Wraiths have a toxic reaction to Salt. If a Wraith comes into contact with a pile of salt, it will immediately cease attacking.
+            </p>
+
+        </div>
+
+
+
+        <!-- Jinn -->
+        <button class="accordion">
+            <div class="row"> 
+                <div class="column2" id="ji1"><strong>Jinn</strong></div>
+                <div class="column2" id="ji2">EMF 5</div>
+                <div class="column2" id="ji3">Ghost Orbs</div>
+                <div class="column2" id="ji4">Spirit Box</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                A Jinn is a territorial Ghost that will attack when threatened. It also has been known to travel at significant speed.
+                <br><br>
+                <strong>Strengths:</strong> A Jinn will travel at a faster speed if its victim is far away.
+                <br><br>
+                <strong>Weaknesses:</strong> Turning off the location's power source will prevent the Jinn from using its ability.
+            </p>
+
+        </div>
+
+
+
+        <!-- Shade -->
+        <button class="accordion">
+            <div class="row"> 
+                <div class="column2" id="sh1"><strong>Shade</strong></div>
+                <div class="column2" id="sh2">EMF 5</div>
+                <div class="column2" id="sh3">Ghost Orbs</div>
+                <div class="column2" id="sh4">Ghost Writing</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                A Shade is known to be a Shy Ghost. There is evidence that a Shade will stop all paranormal activity if there are multiple people nearby.
+                <br><br>
+                <strong>Strengths:</strong> As a shy ghost, a Shade will rarely perform actions in the presence of two or more people, making it harder to detect.
+                <br><br>
+                <strong>Weaknesses:</strong> Conversely, a Shade will rarely start a Hunt when players are grouped together.
+            </p>
+
+        </div>
+
+
+
+        <!-- Oni -->
+        <button class="accordion">
+            <div class="row"> 
+                <div class="column2" id="on1"><strong>Oni</strong></div>
+                <div class="column2" id="on2">EMF 5</div>
+                <div class="column2" id="on3">Spirit Box</div>
+                <div class="column2 "id="on4">Ghost Writing</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                Onis are a cousin to the Demon and possess extreme strength. There have been rumors that they become more active around their prey.
+                <br><br>
+                <strong>Strengths:</strong> Oni are more active when people are nearby and have been seen moving objects at great speed.
+                <br><br>
+                <strong>Weaknesses:</strong> Being more active will make the Oni easier to find and identify.
+            </p>
+
+        </div>
+
+
+
+        <!-- Revenant -->
+        <button class="accordion">
+            <div class="row"> 
+                <div class="column2" id="re1"><strong>Revenant</strong></div>
+                <div class="column2" id="re2">EMF 5</div>
+                <div class="column2" id="re3">Ghost Writing</div>
+                <div class="column2" id="re4">Fingerprints</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                A Revenant is a slow but violent Ghost that will attack indiscriminantly. It has been rumored to travel at a significantly high speed when hunting.
+                <br><br>
+                <strong>Strengths:</strong> A Revenant will travel at a significantly faster speed when hunting a victim. Additionally, the Revenant can freely switch whoever it is targeting during a Hunt.
+                <br><br>
+                <strong>Weaknesses:</strong> Hiding from the Revenant will cause it to move very slowly.
+            </p>
+
+        </div>
+
+
+
+        <!-- Poltergeist -->
+        <button class="accordion">
+            <div class="row"> 
+                <div class="column2" id="po1"><strong>Poltergeist</strong></div>
+                <div class="column2" id="po2">Ghost Orbs</div>
+                <div class="column2" id="po3">Spirit Box</div>
+                <div class="column2" id="po4">Fingerprints</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                One of the most famous Ghosts, a Poltergeist, also known as a noisy ghost can manipulate objects around it to spread fear into it's victims.
+                <br><br>
+                <strong>Strengths:</strong> A Poltergeist is capable of influencing more objects at once than any other Ghosts, and is capable of shutting multiple doors at once.
+                <br><br>
+                <strong>Weaknesses:</strong> A Poltergeist is almost ineffective in an empty room.
+            </p>
+        </div>
+
+
+
+        <!-- Spirit -->
+        <button class="accordion">
+            <div class="row">
+                <div class="column2" id="sp1"><strong>Spirit</strong></div>
+                <div class="column2" id="sp2">Spirit Box</div>
+                <div class="column2" id="sp3">Ghost Writing</div>
+                <div class="column2" id="sp4">Fingerprints</div>
+            </div>
+        </button>
+        <div class="panel">
+            <p>
+                A Spirit is the most common Ghost you will come across however it is still very powerful and dangerous. They are usually discovered at one of their hunting grounds after an unexplained death.
+                <br><br>
+                <strong>Strengths:</strong> The spirit has no discernible strengths, however it is known to increase its hunting as your sanity drops.
+                <br><br>
+                <strong>Weaknesses:</strong> Using Smudge Sticks on a Spirit will stop it attacking for 180 seconds instead of 90.
+            </p>
+
+        </div>
+
+
+
+        <table>
+            <tr id="phantom">
+                <th><strong>Phantom</strong></th>
+                <th>Freezing Temps</th>
+                <th>EMF 5</th>
+                <th>Ghost Orbs</th>
+            </tr>
+            <tr id="banshee">
+                <th><strong>Banshee</strong></th>
+                <th>Freezing Temps</th>
+                <th>EMF 5</th>
+                <th>Fingerprints</th>
+            </tr>
+            <tr id="mare">
+                <th><strong>Mare</strong></th>
+                <th>Freezing Temps</th>
+                <th>Ghost Orbs</th>
+                <th>Spirit Box</th>
+            </tr>
+            <tr id="yurei">
+                <th><strong>Yurei</strong></th>
+                <th>Freezing Temps</th>
+                <th>Ghost Orbs</th>
+                <th>Ghost Writing</th>
+            </tr>
+            <tr id="demon">
+                <th><strong>Demon</strong></th>
+                <th>Freezing Temps</th>
+                <th>Spirit Box</th>
+                <th>Ghost Writing</th>
+            </tr>
+            <tr id="wraith">
+                <th><strong>Wraith</strong></th>
+                <th>Freezing Temps</th>
+                <th>Spirit Box</th>
+                <th>Fingerprints</th>
+            </tr>
+            <tr id="jinn">
+                <th><strong>Jinn</strong></th>
+                <th>EMF 5</th>
+                <th>Ghost Orbs</th>
+                <th>Spirit Box</th>
+            </tr>
+            <tr id="shade">
+                <th><strong>Shade</strong></th>
+                <th>EMF 5</th>
+                <th>Ghost Orbs</th>
+                <th>Ghost Writing</th>
+            </tr>
+            <tr id="oni">
+                <th><strong>Oni</strong></th>
+                <th>EMF 5</th>
+                <th>Spirit Box</th>
+                <th>Ghost Writing</th>
+            </tr>
+            <tr id="revenant">
+                <th><strong>Revenant</strong></th>
+                <th>EMF 5</th>
+                <th>Ghost Writing</th>
+                <th>Fingerprints</th>
+            </tr>
+            <tr id="poltergeist">
+                <th><strong>Poltergeist</strong></th>
+                <th>Ghost Orbs</th>
+                <th>Spirit Box</th>
+                <th>Fingerprints</th>
+            </tr>
+            <tr id="spirit">
+                <th><strong>Spirit</strong></th>
+                <th>Spirit Box</th>
+                <th>Ghost Writing</th>
+                <th>Fingerprints</th>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+
+
+
+</body>
+
+<script src="v1-4script.js"></script>
+
+
+</html> 

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phasmophobia Ghost Classifier</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" href="Phasmophobia-lg.png">
+</head>
+<div class="topnav">
+    <div class="leftGroup">   
+        <div class="brand">Phasmophobia Ghost Classifier</div>
+    </div>
+
+    <div class="rightGroup">
+        <div class="button"><a href="index.html">Normal</a></div>
+        <div class="button"><a href="shop.html">Nightmare</a></div>
+        <div class="button"><a href="about.html">Phrases</a></div>
+    </div>
+</div>
+
+<body onload="saveBox()">
+<!-- <a href="index.html"><button style="margin-left: 30px;" class="button nightmare nightmareactive">Nightmare</button></a> -->
+
+<div class="row">
+    <div class="column3">
+        <p><h3>Evidence</h3>
+
+        <table id="evidence">
+            <tr>
+                <th><h4>✓</h4></th>
+                <th><h4>X</h4></th>
+                <th> </th>
+                <th>%</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="frzT1" onclick="check()"></th>
+                <th><input type="checkbox" id="frzF1" onclick="check()"></th>
+                <th>❄️Freezing</th>
+                <th id="frzP"> </th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="boxT1" onclick="check()"></th>
+                <th><input type="checkbox" id="boxF1" onclick="check()"></th>
+                <th>📟Spirit Box</th>
+                <th id="boxP"> </th>
+            </tr>          
+            <tr>
+                <th><input type="checkbox" id="orbT1" onclick="check()"></th>
+                <th><input type="checkbox" id="orbF1" onclick="check()"></th>
+                <th>✨Orbs</th>
+                <th id="orbP"> </th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="emfT1" onclick="check()"></th>
+                <th><input type="checkbox" id="emfF1" onclick="check()"></th>
+                <th>🚥EMF 5</th>
+                <th id="emfP"> </th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="writeT1" onclick="check()"></th>
+                <th><input type="checkbox" id="writeF1" onclick="check()"></th>
+                <th>📖Writing</th>
+                <th id="writeP"> </th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="dotT1" onclick="check()"></th>
+                <th><input type="checkbox" id="dotF1" onclick="check()"></th>
+                <th>❇️D.O.T.S</th>
+                <th id="dotP"> </th>
+            </tr>
+            <tr>
+                <th><input type="checkbox" id="printT1" onclick="check()"></th>
+                <th><input type="checkbox" id="printF1" onclick="check()"></th>
+                <th>🖐️Fingerprints</th>
+                <th id="printP"> </th>
+            </tr>
+        </table>
+        <br><br>
+
+        <button class="button red"
+        id="reset"
+        onclick="pageReset()">
+            Reset
+        </button>
+
+        
+
+        </p>
+    </div>
+
+
+    <div class="column">
+        <h3>Possible Ghosts</h3>
+
+        <div class="tab">
+            <!-- Spirit -->
+            <button id="spi" class="tablinks" onclick="elim(spi, 0)">               
+                <div class="main">
+                    <strong class="title">Spirit</strong>
+                    <div class="ev">
+                        <div class="column2" id="spibox">📟Spirit Box</div>
+                        <div class="column2" id="spiemf">🚥EMF 5</div>
+                        <div class="column2" id="spiwrite">📖Writing</div>
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="spiYes">✅</p>
+                            Smudge Sticks will prevent attacks for a long period of time
+                        </div>
+                    </div>
+                </div>      
+            </button>
+
+            <!-- Wraith -->
+            <button id="wra" class="tablinks" onclick="elim(wra, 1)">
+                <div class="main">
+                    <strong class="title">Wraith</strong>
+                    <div class="ev" > 
+                        <div class="column2" id="wrabox">📟Spirit Box</div>
+                        <div class="column2" id="wraemf">🚥EMF 5</div>
+                        <div class="column2" id="wradot">❇️D.O.T.S</div>
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="wraNo">⚠️</p>
+                            <p> Can't be tracked by footsteps</p>
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="wraYes">✅</p>
+                             Toxic reaction to salt
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Phantom -->
+            <button id="pha" class="tablinks" onclick="elim(pha, 2)">
+
+                <div class="main">
+                    <strong class="title">Phantom</strong>
+                    <div class="ev">
+                        <div class="column2" id="phabox">📟Spirit Box</div>
+                        <div class="column2" id="phadot">❇️D.O.T.S</div>
+                        <div class="column2" id="phaprint">🖐️Fingerprints</div>
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="phaNo">⚠️</p>
+                            Looking at it lowers sanity
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="phaYes">✅</p>
+                            Taking a photo makes it disappear
+                        </div>
+                    </div>
+                    
+                </div>
+            </button>
+
+            <!-- Poltergeist -->
+            <button id="pol" class="tablinks" onclick="elim(pol, 3)">
+                <div class="main">
+                    <strong class="title">Poltergeist</strong>
+                    <div class="ev">
+                        <div class="column2" id="polbox">📟Spirit Box</div>
+                        <div class="column2" id="polwrite">📖Writing</div>
+                        <div class="column2" id="polprint">🖐️Fingerprints</div>
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="polNo">⚠️</p>
+                            Can throw multiple objects at once
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="polYes">✅</p>
+                            Ineffective in an empty room
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Banshee -->
+            <button id="ban" class="tablinks" onclick="elim(ban, 4)">
+                <div class="main">
+                    <strong class="title">Banshee</strong>
+                    <div class="ev">
+                        <div class="column2" id="banorb">✨Orbs</div>
+                        <div class="column2" id="bandot">❇️D.O.T.S</div>
+                        <div class="column2" id="banprint">🖐️Fingerprints</div>
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="banNo">⚠️</p>
+                            Targets a single player at a time
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="banYes">✅</p>
+                            Less aggressive near Crucifix
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Jinn -->
+            <button id="jin" class="tablinks" onclick="elim(jin, 5)">
+                <div class="main">
+                    <strong class="title">Jinn</strong>
+                    <div class="ev">
+                        <div class="column2" id="jinfrz">❄️Freezing</div>
+                        <div class="column2" id="jinemf">🚥EMF 5</div>
+                        <div class="column2" id="jinprint">🖐️Fingerprints</div>
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="jinNo">⚠️</p>
+                            Travels faster when victim is far
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="jinYes">✅</p>
+                            Turning off the power source disables its ability
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Mare -->
+            <button id="mar" class="tablinks" onclick="elim(mar, 6)">
+                <div class="main">
+                    <strong class="title">Mare</strong>
+                    <div class="ev">
+                        <div class="column2" id="marbox">📟Spirit Box</div>
+                        <div class="column2" id="marorb">✨Orbs</div>
+                        <div class="column2" id="marwrite">📖Writing</div>   
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="marNo">⚠️</p>
+                            More likely to attack in the dark
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="marYes">✅</p>
+                            Less likely to attack with the lights on
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Revenant -->
+            <button id="rev" class="tablinks" onclick="elim(rev, 7)">
+                <div class="main">
+                    <strong class="title">Revenant</strong>
+                    <div class="ev">
+                        <div class="column2"  id="revfrz">❄️Freezing</div>
+                        <div class="column2"  id="revorb">✨Orbs</div>
+                        <div class="column2"  id="revwrite">📖Writing</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="revNo">⚠️</p>
+                            Travels faster while hunting
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="revYes">✅</p>
+                            Hiding from it makes it move slowly
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Shade -->
+            <button  id="sha" class="tablinks" onclick="elim(sha, 8)">
+                <div class="main">
+                    <strong class="title">Shade</strong>
+                    <div class="ev">
+                        <div class="column2" id="shafrz">❄️Freezing</div>
+                        <div class="column2" id="shaemf">🚥EMF 5</div>
+                        <div class="column2" id="shawrite">📖Writing</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="shaNo">⚠️</p>
+                            Harder to detect in the presence of two or more players
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="shaYes">✅</p>
+                            Will not hunt if multiple players are nearby
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Demon -->
+            <button id="dem" class="tablinks" onclick="elim(dem, 9)">
+                <div class="main">
+                    <strong class="title">Demon</strong>
+                    <div class="ev">
+                        <div class="column2" id="demfrz">❄️Freezing</div>
+                        <div class="column2" id="demwrite">📖Writing</div>
+                        <div class="column2" id="demprint">🖐️Fingerprints</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="demNo">⚠️</p>
+                            Attacks more often
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="demYes">✅</p>
+                            Using Ouija board will not lower sanity
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Yurei -->
+            <button  id="yur" class="tablinks" onclick="elim(yur, 10)">
+                <div class="main">
+                    <strong class="title">Yurei</strong>
+                    <div class="ev">
+                        <div class="column2" id="yurfrz">❄️Freezing</div>
+                        <div class="column2" id="yurorb">✨Orbs</div>
+                        <div class="column2" id="yurdot">❇️D.O.T.S</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="yurNo">⚠️</p>
+                            Stronger effect of sanity
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="yurYes">✅</p>
+                            Smudge stick causes it not to wander for approximately 90 seconds
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Oni -->
+            <button id="oni" class="tablinks" onclick="elim(oni, 11)">
+                <div class="main">
+                    <strong class="title">Oni</strong>
+                    <div class="ev">
+                        <div class="column2" id="onifrz">❄️Freezing</div>
+                        <div class="column2" id="oniemf">🚥EMF 5</div>
+                        <div class="column2" id="onidot">❇️D.O.T.S</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="oniNo">⚠️</p>
+                            More active with players nearby, moves objects at a greater speed
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="oniYes">✅</p>
+                            Players being more active makes it easier to find
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Yokai -->
+            <button id="yok" class="tablinks" onclick="elim(yok, 12)">
+                <div class="main">
+                    <strong class="title">Yokai</strong>
+                    <div class="ev">
+                        <div class="column2" id="yokbox">📟Spirit Box</div>
+                        <div class="column2" id="yokorb">✨Orbs</div>
+                        <div class="column2" id="yokdot">❇️D.O.T.S</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="yokNo">⚠️</p>
+                            Talking near it will cause it to hunt more often
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="yokYes">✅</p>
+                            While hunting, it only hears voices close to it
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Hantu -->
+            <button id="han" class="tablinks" onclick="elim(han, 13)">
+                <div class="main">
+                    <strong class="title">Hantu</strong>
+                    <div class="ev">
+                        <div class="column2" id="hanfrz">❄️Freezing</div>
+                        <div class="column2" id="hanorb">✨Orbs</div>
+                        <div class="column2" id="hanprint">🖐️Fingerprints</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="hanNo">⚠️</p>
+                            Faster in cold rooms
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="hanYes">✅</p>
+                            Slower in warm rooms
+                        </div>
+                    </div>
+                </div>
+            </button>
+            
+            <!-- Goryo -->
+            <button id="gor" class="tablinks" onclick="elim(gor, 14)">
+                <div class="main">
+                    <strong class="title">Goryo</strong>
+                    <div class="ev">
+                        <div class="column2" id="goremf">🚥EMF 5</div>
+                        <div class="column2" id="gordot">❇️D.O.T.S</div>
+                        <div class="column2" id="gorprint">🖐️Fingerprints</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="gorNo">⚠️</p>
+                            Only shows up if no one is nearby
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="gorYes">✅</p>
+                            Does not roam far from it's room
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Myling -->
+            <button id="myl" class="tablinks" onclick="elim(myl, 15)">
+                <div class="main">
+                    <strong class="title">Myling</strong>
+                    <div class="ev">
+                        <div class="column2" id="mylemf">🚥EMF 5</div>
+                        <div class="column2" id="mylwrite">📖Writing</div>
+                        <div class="column2" id="mylprint">🖐️Fingerprints</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="mylNo">⚠️</p>
+                            Footsteps are quieter while hunting
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="mylYes">✅</p>
+                            Emits more paranormal sounds
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Onryo -->
+            <button id="onr" class="tablinks" onclick="elim(ony, 16)">
+                <div class="main">
+                    <strong class="title">Onryo</strong>
+                    <div class="ev">
+                        <div class="column2" id="onrfrz">❄️Freezing</div>
+                        <div class="column2" id="onrorb">✨Orbs</div>
+                        <div class="column2" id="onrbox">📟Spirit Box</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="onrNo">⚠️</p>
+                            Extinguishing a flame can cause a hunt
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="onrYes">✅</p>
+                            Less likely to hunt when threatened
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Twins -->
+            <button id="twi" class="tablinks" onclick="elim(twi, 17)">
+                <div class="main">
+                    <strong class="title">The Twins</strong>
+                    <div class="ev">
+                        <div class="column2" id="twifrz">❄️Freezing</div>
+                        <div class="column2" id="twiemf">🚥EMF 5</div>
+                        <div class="column2" id="twibox">📟Spirit Box</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="twiNo">⚠️</p>
+                            Either twin can be angered and initiate an attack
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="twiYes">✅</p>
+                            Twins often interact at the same time
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Raiju -->
+            <button id="rai" class="tablinks" onclick="elim(rai, 18)">
+                <div class="main">
+                    <strong class="title">Raiju</strong>
+                    <div class="ev">
+                        <div class="column2" id="raiemf">🚥EMF 5</div>
+                        <div class="column2" id="raiorb">✨Orbs</div>
+                        <div class="column2" id="raidot">❇️D.O.T.S</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="raiNo">⚠️</p>
+                            Power from nearby electrical devices makes it move faster
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="raiYes">✅</p>
+                            It constantly disrupts electronic equipment
+                        </div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- Obake -->
+            <button id="oba" class="tablinks" onclick="elim(oba, 19)">
+                <div class="main">
+                    <strong class="title">Obake</strong>
+                    <div class="ev">
+                        <div class="column2" id="obaemf">🚥EMF 5</div>
+                        <div class="column2" id="obaorb">✨Orbs</div>
+                        <div class="column2" id="obaprint">🖐️Fingerprints</div>                        
+                    </div>
+                    <div class="second">
+                        <div class="across">
+                            <p id="obaNo">⚠️</p>
+                            When interacting, it rarely leaves a trace
+                        </div>
+                        <br>
+                        <div class="across">
+                            <p id="obaYes">✅</p>
+                            Sometimes shape-shifts and leaves Fingerprint with six fingers
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+</body>
+
+<script src="scriptNightmare.js"></script>
+
+
+</html> 

@@ -43,6 +43,10 @@ var onr = document.getElementById("onr");
 var twi = document.getElementById("twi");
 var rai = document.getElementById("rai");
 var oba = document.getElementById("oba");
+var mim = document.getElementById("mim");
+var mor = document.getElementById("mor");
+var tha = document.getElementById("tha");
+var deo = document.getElementById("deo");
 
 
 var defaultColor = "white";
@@ -310,20 +314,54 @@ let obake = {
     print: true,
     dot: false
 };
-
-
-
-
-
-let GhostLibrary = 
-[
-    phantom, banshee, mare, yurei, demon, wraith, jinn, shade, ooni, revenant, poltergeist, spirit, hantu, yokai, goryo, myling, onryo, twins, raiju, obake
-];
-
-let VarLibrary =
-[
-    pha, ban, mar, yur, dem, wra, jin, sha, oni, rev, pol, spi, han, yok, gor, myl, onr, twi, rai, oba
-];
+let mimic = {
+    name: "mimic",
+    index: 20,
+    visible: true,
+    frz: true,
+    emf: false,
+    orb: false,
+    box: true,
+    write: false,
+    print: true,
+    dot: false
+};
+let moroi = {
+    name: "moroi",
+    index: 21,
+    visible: true,
+    frz: true,
+    emf: false,
+    orb: false,
+    box: true,
+    write: true,
+    print: false,
+    dot: false
+};
+let thaye = {
+    name: "thaye",
+    index: 22,
+    visible: true,
+    frz: false,
+    emf: false,
+    orb: true,
+    box: false,
+    write: true,
+    print: false,
+    dot: true
+};
+let deogen = {
+    name: "deogen",
+    index: 23,
+    visible: true,
+    frz: false,
+    emf: false,
+    orb: false,
+    box: true,
+    write: true,
+    print: false,
+    dot: true
+};
 
 let PerVarLibrary = 
 [
@@ -334,20 +372,38 @@ let CheckBoxLibrary =
 [
     frzT, frzF, emfT, emfF, orbT, orbF, boxT, boxF, writeT, writeF, printT, printF, dotT, dotF
 ];
-
 let EvidenceLibrary =
 [
     "frz", "emf", "orb", "box", "write", "print", "dot"
 ];
 
+let GhostLibrary = 
+[
+    phantom, banshee, mare, yurei, demon, wraith, jinn, shade, ooni, revenant, 
+    poltergeist, spirit, hantu, yokai, goryo, myling, onryo, twins, raiju, 
+    obake, mimic, moroi, thaye, deogen
+];
+
+let VarLibrary =
+[
+    pha, ban, mar, yur, dem, wra, jin, sha, oni, rev, pol, spi, han, yok, gor, 
+    myl, onr, twi, rai, oba, mim, mor, tha, deo
+];
+
+
 let GhostVarLibrary = 
 [
-    "pha", "ban", "mar", "yur", "dem", "wra", "jin", "sha", "oni", "rev", "pol", "spi", "han", "yok", "gor", "myl", "onr", "twi", "rai", "oba"
+    "pha", "ban", "mar", "yur", "dem", "wra", "jin", "sha", "oni", "rev", "pol", 
+    "spi", "han", "yok", "gor", "myl", "onr", "twi", "rai", "oba", "mim", "mor", 
+    "tha", "deo"
 ];
 
 let GhostNameLibrary = 
 [
-    "phantom", "banshee", "mare", "yurei", "demon", "wraith", "jinn", "shade", "oni", "revenant", "poltergeist", "spirit", "hantu", "yokai", "goryo", "myling", "onryo", "twins", "raiju", "obake"
+    "phantom", "banshee", "mare", "yurei", "demon", "wraith", "jinn", "shade", 
+    "oni", "revenant", "poltergeist", "spirit", "hantu", "yokai", "goryo", 
+    "myling", "onryo", "twins", "raiju", "obake",  "mimic", "moroi", "thaye", 
+    "deogen"
 ];
 
 
@@ -377,9 +433,9 @@ function pageReset() {
 
     calculate()
 
-    //unorder()
-    //initiateOrder()
-    //resetOrder()
+    unorder()
+    initiateOrder()
+    resetOrder()
 
     visibility()
 
@@ -393,21 +449,33 @@ function visibility(){
 
         if (GhostLibrary[i].visible == false) {
 
-            VarLibrary[i].style.color = cancelColor;
+            //console.log(GhostLibrary[i].name, " canceled")
 
-            //emojiRemove(i);
+            VarLibrary[i].style.color = cancelColor;
+            //console.log(VarLibrary[i].style.color)
+
+            hide(document.getElementById(GhostVarLibrary[i]))
+
+            emojiRemove(i);
 
         };
 
         if (GhostLibrary[i].visible == true) {
 
-            VarLibrary[i].style.color = defaultColor;
+            //console.log(GhostLibrary[i].name, " shown ✨")
 
-            //emojiBringBack(i);
+            VarLibrary[i].style.color = defaultColor;
+            show(document.getElementById(GhostVarLibrary[i]))
+
+            //console.log(VarLibrary[i].style.color)
+
+            emojiBringBack(i);
             
         };
 
     };
+
+    //console.log("✨Visibility✨")
 
 };
 
@@ -423,7 +491,7 @@ function emojiRemove(g) {
             if(EvidenceLibrary[e] == "box") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Spirit Box"};
             if(EvidenceLibrary[e] == "write") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Writing"};
             if(EvidenceLibrary[e] == "print") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "Fingerprints"};
-            if(EvidenceLibrary[e] == "dot") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "D.O.T.S."};
+            if(EvidenceLibrary[e] == "dot") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "D.O.T.S"};
 
 
         };
@@ -444,7 +512,7 @@ function emojiBringBack(g) {
             if(EvidenceLibrary[e] == "box") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "📟Spirit Box"};
             if(EvidenceLibrary[e] == "write") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "📖Writing"};
             if(EvidenceLibrary[e] == "print") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "🖐️Fingerprints"};
-            if(EvidenceLibrary[e] == "dot") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "❇️D.O.T.S."};
+            if(EvidenceLibrary[e] == "dot") {document.getElementById(GhostVarLibrary[g]+EvidenceLibrary[e]).innerText = "❇️D.O.T.S"};
 
 
         };
@@ -548,18 +616,14 @@ function check() {
 
     // reset
     reset()
-
-    visibility()
-
     
     checkboxes()
-    
-
-    visibility()
 
     calculate()
 
-    //generateOrder()
+    generateOrder()
+
+    visibility()
 
 };
 
@@ -711,11 +775,6 @@ function checkboxes() {
 };
 
 
-
-
-
-
-
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -750,10 +809,6 @@ function openCity(evt, cityName) {
 };
 
 
-
-
-
-
 let newOrder=[];
 
 function generateOrder() {
@@ -773,7 +828,7 @@ function generateOrder() {
 
             newOrder.push(GhostLibrary[r].index);
 
-            console.log(GhostLibrary[r].name,GhostLibrary[r].index, " placed in row ", newOrder.length);
+            //console.log(GhostLibrary[r].name,GhostLibrary[r].index, " placed in row ", newOrder.length);
 
         };
         
@@ -786,24 +841,47 @@ function generateOrder() {
 
             newOrder.push(GhostLibrary[i].index);
 
-            console.log(GhostLibrary[i].name,GhostLibrary[i].index, " placed in row ", newOrder.length);
+            //console.log(GhostLibrary[i].name,GhostLibrary[i].index, " placed in row ", newOrder.length);
         };
         
     };
 
-    console.log("[ generate order ] ", newOrder);
+    ////console.log("[ generate order ] ", newOrder);
+    //console.log("[ generate order ] ", showMeOrder(newOrder));
 
     initiateOrder()
 
     
 };
 
+function showMeOrder(myOrder) {
+
+    if(myOrder.length === GhostLibrary.length){
+
+        let finalMessage = ""
+
+        for(i = 0; i < GhostLibrary.length; i++){
+
+            finalMessage += (" [" + myOrder[i] + " " + GhostLibrary[myOrder[i]].name + "] ")
+
+        }
+
+        return finalMessage
+
+    } else {
+
+        return myOrder
+
+    }
+
+}
+
 
 
 
 function initiateOrder() {
 
-    if (newOrder.length == 16) {
+    if (newOrder.length == GhostLibrary.length) {
 
         var wrapper = document.getElementsByClassName("tab");
         var items = wrapper[0].children;
@@ -826,7 +904,7 @@ function initiateOrder() {
         // for(let i=0;i<newOrder.length;i++){
         //     for(let j=0;j<newOrder.length;j++){
         //         if(i==newOrder[j]){
-        //             //console.log(i, " == ", newOrder[j], children[j].id)
+        //             ////console.log(i, " == ", newOrder[j], children[j].id)
         //             wrapper.appendChild(children[j]);
         //             break;
         //         };
@@ -834,7 +912,6 @@ function initiateOrder() {
         // };
 
     };
-
 };
 
 let newNewOrder = [];
@@ -872,8 +949,13 @@ function unorder() {
         
     };
 
-    console.log(" unOrdered: ", newOrder, "\n"
-                ," to ", newNewOrder);
+    ////console.log(" unOrdered: ", newOrder, "\n"
+    //            ," to ", newNewOrder
+    //);
+    
+    //console.log(" unOrdered: ", showMeOrder(newOrder), "\n"
+    //             ," to ", showMeOrder(newNewOrder)
+    // );
     newOrder = newNewOrder;
     
 };
@@ -888,3 +970,45 @@ function resetOrder() {
 
 };
 
+
+
+function show(ghost) {
+
+    //let ghost = document.getElementById(document.getElementById("ghostInput").value)
+
+    //console.log(ghost)
+
+    ghost.style.color = defaultColor
+    emojiBringBack(ghost);
+
+}
+
+function hide(ghost) {
+
+    //let ghost = document.getElementById(document.getElementById("ghostInput").value)
+
+    //console.log(ghost)
+
+    ghost.style.color = cancelColor
+    emojiRemove(ghost);
+
+}
+
+
+function showButton() {
+
+    let ghost = document.getElementById(document.getElementById("ghostInput").value)
+
+    ghost.style.color = defaultColor
+    emojiBringBack(ghost);
+
+}
+
+function hideButton() {
+
+    let ghost = document.getElementById(document.getElementById("ghostInput").value)
+
+    ghost.style.color = cancelColor
+    emojiRemove(ghost);
+
+}

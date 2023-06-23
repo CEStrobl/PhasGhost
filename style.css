@@ -6,6 +6,8 @@ body {
     color:white;
     font-family: Tahoma;
     background-color: #1b1c25;
+    display:block;
+    margin:10px;
 }
 
 
@@ -16,7 +18,9 @@ body {
 
 
 
-
+.row{
+    margin:10px;
+}
 
 
 /* general right */
@@ -28,7 +32,7 @@ body {
 /* ghost evidence info */
 .column2 {
     float: left;
-    width: 20%;
+    width: 130px;
 }
 
 /* evidence */
@@ -39,7 +43,7 @@ body {
 /* blank evidence */
 .column4 {
     float: left;
-    width: 20%;
+    width: 140px;
     color: transparent;
 }
 
@@ -158,6 +162,21 @@ body {
     background-color: #1e5575;
 }
 
+.nightmare {
+    color:white;
+    background-color: transparent; 
+    border: 2px solid #751e34;
+    margin: 0;
+    font-size: 15px;
+}
+  
+.nightmare:hover {
+    background-color: #751e34;
+}
+.nightmareactive {
+    background-color: #751e34;
+}
+
 
 .gray {
     color:white;
@@ -239,10 +258,14 @@ input:active:after {
 /* table */
 
 table, th, tr {
-    border: 1px solid #1F4068;
+    /* border: 1px solid #1F4068; */
     text-align: left;
     font-weight: normal;
     padding: 5px
+}
+
+th {
+    border: 1px solid #1F4068;
 }
 
 table h4 {
@@ -272,7 +295,7 @@ table h4 {
 /* Style the tab */
 .tab {
     float: left;
-    width: 50%;
+    width: 90%;
     min-width: 600px;
     min-height: 600px;
     
@@ -352,3 +375,104 @@ input {
     height: 20px;
     width: 20px;
 }
+
+
+
+.main {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 150px;
+    font-size: 20px;
+}
+
+.ev {
+    display: flex;
+    text-align: center;
+}
+
+.second{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.across{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.across p {margin: 0px;} 
+
+.second .blank {color: transparent;}
+
+
+.topnav {
+    
+    /* position:sticky; */
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 10px;
+    margin:0%;
+    
+    display: flex;
+    flex:1;
+    align-items: center;
+    vertical-align: middle;
+
+    color: rgb(255, 255, 255);
+    background-color: #121318;
+    /* text-transform: uppercase; */
+    font-family:Arial, Helvetica, sans-serif ;
+}
+
+.topnav .brand {
+    float: left;
+    padding: 15px;
+    font-size: 25px;
+    /* margin-left: 20px; */
+}
+
+
+.topnav .button {
+    color: white;
+    float: right;
+    padding: 15px;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.topnav .button:hover {
+    background-color: #a0a0a0;
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+}
+
+.topnav .button a {
+    color:unset;
+    text-decoration: none;
+}
+.leftGroup {
+    
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+}
+
+.rightGroup {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+}
+
